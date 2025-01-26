@@ -3,5 +3,4 @@
 # @within
 #   function zz.click_item:**
 
-scoreboard players set @s cliS.mode 1
 $$(hold_init)

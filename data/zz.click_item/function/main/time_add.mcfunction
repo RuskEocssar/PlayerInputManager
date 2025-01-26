@@ -3,7 +3,6 @@
 # @within
 #   function zz.click_item:**
 
-
 ## ホールド終了
     execute if score @s cliS.mode matches 1 if predicate zz.click_item:hold if predicate zz.click_item:click run function zz.click_item:main/hold_end
 
