@@ -38,7 +38,7 @@
                                     "weapon.offhand": {
                                         "predicates": {
                                             "custom_data": {
-                                                "slot": "offhand"
+                                                "_slot": "offhand"
                                             }
                                         }
                                     }

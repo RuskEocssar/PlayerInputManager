@@ -14,7 +14,7 @@
     # @within click_item:**
         scoreboard objectives add cliS. dummy "汎用"
         scoreboard objectives add cliS.time.click dummy "クリックの間隔"
-        scoreboard objectives add cliS.time.dclick dummy "クリック後の時間経過"
+        scoreboard objectives add cliS.mode dummy "クリックの状態"
 
 ## Score Holder
     #> Local

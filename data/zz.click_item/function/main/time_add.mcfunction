@@ -4,11 +4,8 @@
 #   function zz.click_item:**
 
 
-## ホールドの処理
-    # ホールド開始
-    execute if predicate zz.click_item:hold_init unless data storage click_item: item.components."minecraft:custom_data".click_event{hold_init:""} run function zz.click_item:event/hold_init with storage click_item: item.components."minecraft:custom_data".click_event
-    # ホールド終了
-    execute if predicate zz.click_item:hold if predicate zz.click_item:click run function zz.click_item:main/hold_end
+## ホールド終了
+    execute if score @s cliS.mode matches 1 if predicate zz.click_item:hold if predicate zz.click_item:click run function zz.click_item:main/hold_end
 
 ## スコア加算
     scoreboard players add @s[scores={player.click.time=0..}] player.click.time 1

@@ -15,7 +15,7 @@
                 "min": 0,
                 "max": {
                     "type": "storage",
-                    "path": "item.components.\"minecraft:custom_data\".click_event.click_interval.max",
+                    "path": "item.components.\"minecraft:custom_data\".click_event.click_interval",
                     "storage": "click_item:"
                 }
             }
@@ -34,7 +34,7 @@
                 "min": 0,
                 "max": {
                     "type": "storage",
-                    "path": "item.components.\"minecraft:custom_data\".click_event.double_click_interval.max",
+                    "path": "item.components.\"minecraft:custom_data\".click_event.double_click_range.max",
                     "storage": "click_item:"
                 }
             }

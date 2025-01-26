@@ -1,6 +1,7 @@
-#> zz.display_ui:core/hub/click/event/hold_end
-# クリック時の処理
+#> zz.click_item:event/hold_end
+# イベントの実行
 # @within
-#   function zz.display_ui:core/hub/**
+#   function zz.click_item:**
 
+scoreboard players set @s cliS.mode 0
 $$(hold_end)

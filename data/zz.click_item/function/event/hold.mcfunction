@@ -1,6 +1,6 @@
-#> zz.display_ui:core/hub/click/event/hold
-# クリック時の処理
+#> zz.click_item:event/hold
+# イベントの実行
 # @within
-#   function zz.display_ui:core/hub/**
+#   function zz.click_item:**
 
 $$(hold)

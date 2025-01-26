@@ -1,6 +1,6 @@
-#> zz.display_ui:core/hub/click/event/double_click
-# クリック時の処理
+#> zz.click_item:event/double_click
+# イベントの実行
 # @within
-#   function zz.display_ui:core/hub/**
+#   function zz.click_item:**
 
 $$(double_click)

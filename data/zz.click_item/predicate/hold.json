@@ -5,7 +5,7 @@
         "player.click.time": {
             "min": {
                 "type": "storage",
-                "path": "item.components.\"minecraft:custom_data\".click_event.click_interval.max",
+                "path": "item.components.\"minecraft:custom_data\".click_event.hold_threshold",
                 "storage": "click_item:"
             },
             "max": 2147483647
