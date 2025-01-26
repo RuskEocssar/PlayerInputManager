@@ -26,16 +26,10 @@
     tag @s remove _player
 
 ## クリックの判定
-    # イベントを実行
-        # シングルクリック
-        execute if predicate zz.click_item:single_click unless predicate zz.click_item:hold unless data storage click_item: item.components."minecraft:custom_data".click_event{click:""} run function zz.click_item:event/click with storage click_item: item.components."minecraft:custom_data".click_event
-        execute if predicate zz.click_item:double_click unless predicate zz.click_item:hold if data storage click_item: item.components."minecraft:custom_data".click_event{double_click:""} unless data storage click_item: item.components."minecraft:custom_data".click_event{click:""} run function zz.click_item:event/click with storage click_item: item.components."minecraft:custom_data".click_event
-        # ダブルクリック
-        execute if predicate zz.click_item:double_click unless predicate zz.click_item:hold unless data storage click_item: item.components."minecraft:custom_data".click_event{double_click:""} run function zz.click_item:event/double_click with storage click_item: item.components."minecraft:custom_data".click_event
-        # ホールド開始
-        execute unless score @s cliS.mode matches 1 if predicate zz.click_item:hold unless data storage click_item: item.components."minecraft:custom_data".click_event{hold_init:""} run function zz.click_item:event/hold_init with storage click_item: item.components."minecraft:custom_data".click_event
-        # ホールド
-        execute if predicate zz.click_item:hold unless data storage click_item: item.components."minecraft:custom_data".click_event{hold:""} run function zz.click_item:event/hold with storage click_item: item.components."minecraft:custom_data".click_event
+    # 長押しによるイベントがない場合
+    execute if data storage click_item: item.components."minecraft:custom_data".click_event{hold:"",hold_init:"",hold_end:""} run function zz.click_item:main/event_wohold
+    # ある場合
+    execute unless data storage click_item: item.components."minecraft:custom_data".click_event{hold:"",hold_init:"",hold_end:""} run function zz.click_item:main/event_whold
     # クリック判定用時間のリセット
     scoreboard players set @s cliS.time.click 0
     execute unless score @s player.click.time matches 0.. run scoreboard players set @s player.click.time 0
