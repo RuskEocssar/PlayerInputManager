@@ -1,0 +1,32 @@
+{
+    "criteria": {
+        "hotbar": {
+            "trigger": "inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "predicates": {
+                            "custom_data": {
+                                "click_event":{}
+                            }
+                        }
+                    }
+                ],
+                "player": {
+                    "slots": {
+                        "hotbar.*": {
+                            "predicates": {
+                                "custom_data": {
+                                    "click_event":{}
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "rewards": {
+        "function": "zz.click_item:slot/change_hotbar"
+    }
+}
