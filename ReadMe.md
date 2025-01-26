@@ -1,17 +1,22 @@
-# Click Item Manager
+# Click Item Manager <!-- omit from toc -->
 
 アイテムを右クリックしたときの処理を簡単に設定できるようにするためのデータパックです。  
 対応バージョン：25w04a
 
 ### 主な機能
 - シングルクリック、ダブルクリック、長押し、長押しの開始および終了のそれぞれに個別のコマンドを設定する
-- 消費アイテムについて、消費後に自動でアイテムを手元に戻す　クールダウン付きのアイテムの作成
-- 利用頻度が高い`consume_seconds`が0または非常に大きいパターンのコンポーネント記述の省略
+- 消費アイテムについて、消費後に自動でアイテムを手元に戻す（クールダウン付きの非消費アイテムが作成できる）
+- 利用頻度が高い`consume_seconds`が0または非常に大きいパターンなどのコンポーネント記述の省略・簡略化
 - ダブルクリックや長押しの判定用のパラメータの個別設定
 
+### 目次
+- [使い方](#使い方)
+  - [アイテムフォーマット](#アイテムフォーマット)
+  - [ストレージフォーマット](#ストレージフォーマット)
+  - [使用例](#使用例)
 
 # 使い方
-　アイテムの`minecraft:custom_data`コンポーネントに以下のフォーマットでクリック時のコマンドを設定することで利用ができる。
+　アイテムの`minecraft:custom_data`コンポーネントに以下のフォーマットでクリック時のコマンドを設定することで利用ができます。
 これとは別に、バニラで用意されている`minecraft:use_cooldown`や`minecraft:consumable`、`minecraft:blocks_attacks`などを併用することができます。
 
 ## アイテムフォーマット 
@@ -22,7 +27,7 @@ minecraft:custom_data : {
     click_event : {
         click : <string>,           | ("") シングルクリックのときに実行するコマンド。
         double_click : <string>,    | ("") ダブルクリックのときに実行するコマンド。設定されていない場合は、clickに設定したコマンドが実行される。
-        hold : <string>,            | ("") 長押し中に実行するコマンド。
+        hold : <string>,            | ("") 長押し中に実行するコマンド。長押し中はclick、double_clickは実行されない。
         hold_init : <string>,       | ("") 長押しを開始したときに実行するコマンド。
         hold_end : <string>,        | ("") 長押しを終了したときに実行するコマンド。
         
@@ -34,13 +39,15 @@ minecraft:custom_data : {
         }
 
         no_consume : <boolen>       | (true) 消費アイテムを消費した際に、アイテムを復元するかどうかの設定。trueの場合、アイテムを復元する。
+        4t_hold : <boolen>          | (false) アイテムを長押しした際、4tick間隔でクリックされるようにするかどうかの設定。trueの場合、4tick間隔になる。
+                                              ニンジン付き棒などの挙動と同じになる。use_cooldownを占有するため、use_cooldownは使用不可となる。
     }
 }
 ```
 
-### ストレージフォーマット
-　`click_interval` `hold_threshold` `double_click_range`については共通設定としてストレージ`click_item:`から設定することもできる。  
-アイテムにこれらのパラメーターが設定されていた場合は、アイテムのパラメーターが優先される。
+## ストレージフォーマット
+　`click_interval` `hold_threshold` `double_click_range`については共通設定としてストレージ`click_item:`から設定することもできます。  
+アイテムにこれらのパラメーターが設定されていた場合は、アイテムのパラメーターが優先されます。
 
 ```html
 * <>内はデータ型 ()内は初期値
@@ -55,11 +62,19 @@ click_item: {
 }
 ```
 
-### 使用例
+## 使用例
 ```mcfunction
+# アイテム 長押し時 毎tick判定
+give @s recovery_compass[custom_data={click_event:{click:"say click", double_click:"say double click", hold:"say hold", hold_init:"say hold init", hold_end:"say hold end"}}]
 
-# ストレージからの設定変更 (長押し時に4tick間隔になるアイテムは下記のようにするといい)
+# アイテム 長押し時 4tick毎判定
+give @s recovery_compass[custom_data={click_event:{4t_hold:true, click:"say click", double_click:"say double click", hold:"say hold", hold_init:"say hold init", hold_end:"say hold end"}}]
+
+# アイテム クールダウン付き
+give @s recovery_compass[custom_data={click_event:{click:"say click"}},use_cooldown={seconds:3f,cooldown_group:"a"}]
+
+# ストレージからの設定変更 (0秒で消費されるアイテムなど、長押し時に4tick間隔になるアイテムは下記のようにすると綺麗な挙動になる)
 data modify storage click_item: click_interval set value 4
-data modify storage click_item: hold_threshold set value 5
-data modify storage click_item: double_click_range set value {min:3,max:7}
+data modify storage click_item: hold_threshold set value 4
+data modify storage click_item: double_click_range set value {min:1,max:3}
 ```
