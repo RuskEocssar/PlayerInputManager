@@ -23,7 +23,7 @@
 ```html
 * <>内はデータ型 ()内は初期値
 
-minecraft:custom_data : {
+"minecraft:custom_data" : {
     click_event : {
         click : <string>,           | ("") シングルクリックのときに実行するコマンド。
         double_click : <string>,    | ("") ダブルクリックのときに実行するコマンド。設定されていない場合は、clickに設定したコマンドが実行される。
