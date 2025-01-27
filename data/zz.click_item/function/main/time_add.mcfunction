@@ -8,8 +8,6 @@
 
 ## スコア加算
     scoreboard players add @s[scores={player.click.time=0..}] player.click.time 1
-
-## 判定の終了
     execute as @s[scores={player.click.time=0..},predicate=zz.click_item:click] run scoreboard players set @s player.click.time -1
 
 ## スコア加算
