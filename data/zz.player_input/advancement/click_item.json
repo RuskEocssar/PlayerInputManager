@@ -1,0 +1,79 @@
+{
+    "criteria": {
+        "useing_item_mainhand": {
+            "trigger": "using_item",
+            "conditions": {
+                "item": {
+                    "components": {
+                        "max_stack_size": 1
+                    },
+                    "predicates": {
+                        "custom_data": {
+                            "click_event": {},
+                            "_slot":"mainhand"
+                        }
+                    }
+                }
+            }
+        },
+        "useing_item_offhand": {
+            "trigger": "using_item",
+            "conditions": {
+                "item": {
+                    "components": {
+                        "max_stack_size": 1
+                    },
+                    "predicates": {
+                        "custom_data": {
+                            "click_event": {},
+                            "_slot":"offhand"
+                        }
+                    }
+                }
+            }
+        },
+        "consume_item_mainhand": {
+            "trigger": "consume_item",
+            "conditions": {
+                "item": {
+                    "components": {
+                        "max_stack_size": 1
+                    },
+                    "predicates": {
+                        "custom_data": {
+                            "click_event": {},
+                            "_slot":"mainhand"
+                        }
+                    }
+                }
+            }
+        },
+        "consume_item_offhand": {
+            "trigger": "consume_item",
+            "conditions": {
+                "item": {
+                    "components": {
+                        "max_stack_size": 1
+                    },
+                    "predicates": {
+                        "custom_data": {
+                            "click_event": {},
+                            "_slot":"offhand"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "useing_item_mainhand",
+            "useing_item_offhand",
+            "consume_item_mainhand",
+            "consume_item_offhand"
+        ]
+    ],
+    "rewards": {
+        "function": "zz.player_input:main/player_input"
+    }
+}

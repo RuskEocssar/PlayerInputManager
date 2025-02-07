@@ -1,0 +1,40 @@
+{
+    "condition": "all_of",
+    "terms": [
+        {
+            "condition": "entity_scores",
+            "entity": "this",
+            "scores": {
+                "pliS.time.click": {
+                    "min": {
+                        "type": "storage",
+                        "path": "item.components.\"minecraft:custom_data\".click_event.click_interval",
+                        "storage": "player_input:"
+                    },
+                    "max": 2147483647
+                }
+            }
+        },
+        {
+            "condition": "inverted",
+            "term": {
+                "condition": "entity_scores",
+                "entity": "this",
+                "scores": {
+                    "pliS.time.click": {
+                        "min": {
+                            "type": "storage",
+                            "path": "item.components.\"minecraft:custom_data\".click_event.double_click_range.min",
+                            "storage": "player_input:"
+                        },
+                        "max":{
+                            "type": "storage",
+                            "path": "item.components.\"minecraft:custom_data\".click_event.double_click_range.max",
+                            "storage": "player_input:"
+                        }
+                    }
+                }
+            }
+        }
+    ]
+}

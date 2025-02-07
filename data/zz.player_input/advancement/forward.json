@@ -1,0 +1,20 @@
+{
+    "criteria": {
+        "input_forward": {
+            "trigger": "tick",
+            "conditions": {
+                "player": {
+                    "type_specific": {
+                        "type": "player",
+                        "input": {
+                            "forward": true
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "rewards": {
+        "function": "zz.player_input:forward/main"
+    }
+}

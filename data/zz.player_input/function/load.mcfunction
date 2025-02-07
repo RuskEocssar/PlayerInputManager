@@ -1,0 +1,21 @@
+#> zz.player_input:load
+# 定義/初期設定
+# @within
+#   tag/function minecraft:load
+
+## 各種定義
+    function zz.player_input:define
+
+## 入力の初期設定
+    execute unless data storage player_input: click_item run data modify storage player_input: click_item set value {click_interval:2,hold_threshold:4,double_click_range:{min:2,max:5}}
+    execute unless data storage player_input: forward run data modify storage player_input: forward set value {click_interval:2,hold_threshold:4,double_click_range:{min:2,max:5}}
+    execute unless data storage player_input: back run data modify storage player_input: back set value {click_interval:2,hold_threshold:4,double_click_range:{min:2,max:5}}
+    execute unless data storage player_input: right run data modify storage player_input: right set value {click_interval:2,hold_threshold:4,double_click_range:{min:2,max:5}}
+    execute unless data storage player_input: left run data modify storage player_input: left set value {click_interval:2,hold_threshold:4,double_click_range:{min:2,max:5}}
+    execute unless data storage player_input: jump run data modify storage player_input: jump set value {click_interval:2,hold_threshold:4,double_click_range:{min:2,max:5}}
+    execute unless data storage player_input: sneak run data modify storage player_input: sneak set value {click_interval:2,hold_threshold:4,double_click_range:{min:2,max:5}}
+    execute unless data storage player_input: sprint run data modify storage player_input: sprint set value {click_interval:2,hold_threshold:4,double_click_range:{min:2,max:5}}
+
+## アイテム管理用のエンティティ
+    execute unless entity 4fe002bb-0-2-0-a00000001 run summon interaction 0 1000 0 {Tags:["pliT.","pliT.root"],UUID:[I;1340080827,2,10,1],width:0f,height:0f}
+    execute unless entity 4fe002bb-0-6-0-a00000001 run summon item 0 1000 0 {Tags:["pliT.","pliT.item"],UUID:[I;1340080827,6,10,1],Item:{id:"stick",components:{max_stack_size:1}},PickupDelay:32767s,Age:-32767s,NoGravity:true,Invulnerable:true}

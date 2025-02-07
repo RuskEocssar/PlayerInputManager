@@ -1,0 +1,18 @@
+{
+    "condition": "entity_scores",
+    "entity": "this",
+    "scores": {
+        "pliS.time.click": {
+            "min": {
+                "type": "storage",
+                "path": "item.components.\"minecraft:custom_data\".click_event.double_click_range.min",
+                "storage": "player_input:"
+            },
+            "max": {
+                "type": "storage",
+                "path": "item.components.\"minecraft:custom_data\".click_event.double_click_range.max",
+                "storage": "player_input:"
+            }
+        }
+    }
+}
