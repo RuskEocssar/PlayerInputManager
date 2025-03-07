@@ -91,3 +91,8 @@ data modify storage player_input: click_interval set value 4
 data modify storage player_input: hold_threshold set value 4
 data modify storage player_input: double_click_range set value {min:1,max:3}
 ```
+
+player_input:zz query{
+    history:[{time:2124124,key:"forward"},{time:1241241,key:"forward"}],
+    fu
+}

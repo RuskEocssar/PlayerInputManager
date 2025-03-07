@@ -1,0 +1,56 @@
+{
+    "criteria": {
+        "offhand": {
+            "trigger": "inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "predicates": {
+                            "custom_data": {
+                                "click_event": {}
+                            }
+                        }
+                    }
+                ],
+                "player": [
+                    {
+                        "condition": "entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "slots": {
+                                "weapon.offhand": {
+                                    "predicates": {
+                                        "custom_data": {
+                                            "click_event": {}
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "condition": "inverted",
+                        "term": {
+                            "condition": "entity_properties",
+                            "entity": "this",
+                            "predicate": {
+                                "slots": {
+                                    "weapon.offhand": {
+                                        "predicates": {
+                                            "custom_data": {
+                                                "_slot": "offhand"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "rewards": {
+        "function": "zz.player_input:item/slot/change_offhand"
+    }
+}

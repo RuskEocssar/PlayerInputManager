@@ -1,14 +1,19 @@
 {
-    "condition": "entity_scores",
-    "entity": "this",
-    "scores": {
-        "player.click.time": {
-            "min": {
-                "type": "storage",
-                "path": "item.components.\"minecraft:custom_data\".click_event.hold_threshold",
-                "storage": "player_input:"
-            },
-            "max": 2147483647
+    "condition": "value_check",
+    "value": {
+        "type": "score",
+        "score": "pliS.time",
+        "target": {
+            "type": "fixed",
+            "name": "#pliH.time"
         }
+    },
+    "range": {
+        "min": {
+            "type": "storage",
+            "path": "data.hold_threshold",
+            "storage": "player_input:zz"
+        },
+        "max": 2147483647
     }
 }

@@ -7,20 +7,23 @@
 ## Scoreboard objective
     #> Puclic
     # @public
-        scoreboard objectives add player.click_item dummy "クリックの保持時間"
-        scoreboard objectives add player.forward dummy "前進の保持時間"
-        scoreboard objectives add player.back dummy "後退の保持時間"
-        scoreboard objectives add player.right dummy "右移動の保持時間"
-        scoreboard objectives add player.left dummy "左移動の保持時間"
-        scoreboard objectives add player.jump dummy "ジャンプの保持時間"
-        scoreboard objectives add player.sneak dummy "スニークの保持時間"
-        scoreboard objectives add player.sprint dummy "ダッシュの保持時間"
+        scoreboard objectives add time.click_item dummy "クリックの保持時間"
+        scoreboard objectives add time.forward dummy "前進の保持時間"
+        scoreboard objectives add time.backward dummy "後退の保持時間"
+        scoreboard objectives add time.right dummy "右移動の保持時間"
+        scoreboard objectives add time.left dummy "左移動の保持時間"
+        scoreboard objectives add time.jump dummy "ジャンプの保持時間"
+        scoreboard objectives add time.sneak dummy "スニークの保持時間"
+        scoreboard objectives add time.sprint dummy "ダッシュの保持時間"
     #> Local (core)
     # @within player_input:**
         scoreboard objectives add pliS. dummy "汎用"
+        scoreboard objectives add pliS.logout minecraft.custom:leave_game "ゲーム退出回数"
+        scoreboard objectives add pliS.time dummy "時間共通"
+        scoreboard objectives add pliS.time.2 dummy "時間共通"
         scoreboard objectives add pliS.time.click_item dummy "クリックの間隔"
         scoreboard objectives add pliS.time.forward dummy "前進の間隔"
-        scoreboard objectives add pliS.time.back dummy "後退の間隔"
+        scoreboard objectives add pliS.time.backward dummy "後退の間隔"
         scoreboard objectives add pliS.time.right dummy "右移動の間隔"
         scoreboard objectives add pliS.time.left dummy "左移動の間隔"
         scoreboard objectives add pliS.time.jump dummy "ジャンプの間隔"
@@ -36,23 +39,33 @@
     #> Local
     # @within player_input:**
         #define tag pliT. エンティティ全員
-        #define tag pliT.root.active
-        #define tag pliT.query.click_item
-        #define tag pliT.query.forward
-        #define tag pliT.query.back
-        #define tag pliT.query.right
-        #define tag pliT.query.left
-        #define tag pliT.query.jump
-        #define tag pliT.query.sneak
-        #define tag pliT.query.sprint
-        #define tag pliT.hold.click_item
-        #define tag pliT.hold.forward
-        #define tag pliT.hold.back
-        #define tag pliT.hold.right
-        #define tag pliT.hold.left
-        #define tag pliT.hold.jump
-        #define tag pliT.hold.sneak
-        #define tag pliT.hold.sprint
+        # アクティブ
+        #define tag pliT.active
+            #define tag pliT.active.click_item
+            #define tag pliT.active.forward
+            #define tag pliT.active.backward
+            #define tag pliT.active.right
+            #define tag pliT.active.left
+            #define tag pliT.active.jump
+            #define tag pliT.active.sneak
+            #define tag pliT.active.sprint
+        # クエリ
+            #define tag pliT.query.forward
+            #define tag pliT.query.backward
+            #define tag pliT.query.right
+            #define tag pliT.query.left
+            #define tag pliT.query.jump
+            #define tag pliT.query.sneak
+            #define tag pliT.query.sprint
+        # ホールド
+            #define tag pliT.hold.click_item
+            #define tag pliT.hold.forward
+            #define tag pliT.hold.backward
+            #define tag pliT.hold.right
+            #define tag pliT.hold.left
+            #define tag pliT.hold.jump
+            #define tag pliT.hold.sneak
+            #define tag pliT.hold.sprint
 
 ## Storage
     #> Core

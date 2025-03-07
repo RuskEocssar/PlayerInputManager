@@ -10,5 +10,6 @@
 ## ルートエンティティにライド
     ride @s mount 4fe002bb-0-2-0-a00000001
 
-## アイテムのセット
-    function zz.player_input:main/item/set_item
+## 初期設定
+    # スコアが0のときはアイテムの設定
+    execute if score #pliH. pliS. matches 0 run function zz.player_input:item/right_click/set_item

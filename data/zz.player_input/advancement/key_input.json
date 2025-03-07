@@ -1,0 +1,35 @@
+{
+    "criteria": {
+        "input_forward": {
+            "trigger": "tick",
+            "conditions": {
+                "player": [
+                    {
+                        "condition": "inverted",
+                        "term": {
+                            "condition": "entity_properties",
+                            "entity": "this",
+                            "predicate": {
+                                "type_specific": {
+                                    "type": "player",
+                                    "input": {
+                                        "forward": false,
+                                        "backward": false,
+                                        "right": false,
+                                        "left": false,
+                                        "jump": false,
+                                        "sneak": false,
+                                        "sprint": false
+                                    }
+                                }
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "rewards": {
+        "function": "zz.player_input:key/main"
+    }
+}
