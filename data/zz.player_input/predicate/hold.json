@@ -11,7 +11,7 @@
     "range": {
         "min": {
             "type": "storage",
-            "path": "data.hold_threshold",
+            "path": "settings.hold_threshold",
             "storage": "player_input:zz"
         },
         "max": 2147483647

@@ -14,7 +14,7 @@
             "range": {
                 "min": {
                     "type": "storage",
-                    "path": "data.click_interval",
+                    "path": "settings.click_interval",
                     "storage": "player_input:zz"
                 },
                 "max": 2147483647

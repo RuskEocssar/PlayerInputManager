@@ -11,5 +11,5 @@
     execute unless data storage player_input: key_input run data modify storage player_input: key_input set value {click_interval:2,hold_threshold:5,double_click_range:{min:2,max:5}}
 
 ## アイテム管理用のエンティティ
-    execute unless entity 4fe002bb-0-2-0-a00000001 run summon interaction 0 1000 0 {Tags:["pliT.","pliT.root"],UUID:[I;1340080827,2,10,1],width:0f,height:0f}
-    execute unless entity 4fe002bb-0-6-0-a00000001 run summon item 0 1000 0 {Tags:["pliT.","pliT.item"],UUID:[I;1340080827,6,10,1],Item:{id:"stick",components:{max_stack_size:1}},PickupDelay:32767s,Age:-32767s,NoGravity:true,Invulnerable:true}
+    execute unless score 4fe002bb-0000-0002-0000-000a00000001 pliS. matches 1 store success score 4fe002bb-0000-0002-0000-000a00000001 pliS. run summon interaction 0 1000 0 {Tags:["pliT.","pliT.root"],UUID:[I;1340080827,2,10,1],width:0f,height:0f}
+    execute unless score 4fe002bb-0000-0006-0000-000a00000001 pliS. matches 1 store success score 4fe002bb-0000-0006-0000-000a00000001 pliS. run summon item 0 1000 0 {Tags:["pliT.","pliT.item"],UUID:[I;1340080827,6,10,1],Item:{id:"stick",components:{max_stack_size:1}},PickupDelay:32767s,Age:-32767s,NoGravity:true,Invulnerable:true}

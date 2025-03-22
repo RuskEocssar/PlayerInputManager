@@ -1,12 +1,12 @@
-#> zz.player_input:forward/tick
+#> zz.player_input:left/tick
 # 常時実行
 # @within
 #   function zz.player_input:**
 
 ## プレイヤーから実行
     scoreboard players set #pliH.player pliS. 0
-    execute on origin run function zz.player_input:key/forward/tick_player
+    execute on origin run function zz.player_input:key/left/tick_player
 
 ## ホールドが終了したら削除
     scoreboard players add @s pliS. 1
-    execute if score #pliH.player pliS. matches 1 run scoreboard players reset @s pliS.time.forward
+    execute if score #pliH.player pliS. matches 1 run scoreboard players reset @s pliS.time.left

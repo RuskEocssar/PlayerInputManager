@@ -11,12 +11,12 @@
     "range": {
         "min": {
             "type": "storage",
-            "path": "data.double_click_range.min",
+            "path": "settings.double_click_range.min",
             "storage": "player_input:zz"
         },
         "max": {
             "type": "storage",
-            "path": "data.double_click_range.max",
+            "path": "settings.double_click_range.max",
             "storage": "player_input:zz"
         }
     }

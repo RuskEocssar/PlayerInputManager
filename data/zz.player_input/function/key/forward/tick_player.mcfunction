@@ -7,7 +7,8 @@
     scoreboard players operation #pliH.time pliS.time = @s time.forward
     scoreboard players operation #pliH.interval pliS.time = @s pliS.time.forward
     # ホールド
-    execute if entity @s[tag=pliT.hold.forward] if predicate zz.player_input:hold if predicate zz.player_input:click run function zz.player_input:item/right_click/hold_end
+    execute if entity @s[tag=pliT.hold.forward] if predicate zz.player_input:hold if predicate zz.player_input:click run function zz.player_input:key/event/hold_end
+    execute if entity @s[tag=pliT.hold.forward] if predicate zz.player_input:hold if predicate zz.player_input:click run tag @s remove pliT.hold.forward
 
 ## スコア加算
     scoreboard players add @s pliS.time.forward 1
@@ -16,4 +17,4 @@
 
 ## tickの終了
     scoreboard players operation #pliH.interval pliS.time = @s pliS.time.forward
-    execute unless predicate zz.player_input:interval_time store success score #pliH.player pliS.time.forward run scoreboard players set @s pliS.time.forward 2147483647
+    execute unless predicate zz.player_input:interval_time store success score #pliH.player pliS. run scoreboard players set @s pliS.time.forward 2147483647

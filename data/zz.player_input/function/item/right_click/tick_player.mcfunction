@@ -6,7 +6,6 @@
 ## イベント実行
     scoreboard players operation #pliH.time pliS.time = @s time.click_item
     scoreboard players operation #pliH.interval pliS.time = @s pliS.time.click_item
-    data modify storage player_input:zz data set from storage player_input: item.components."minecraft:custom_data".click_event
     # ホールド
     execute if entity @s[tag=pliT.hold.click_item] if predicate zz.player_input:hold if predicate zz.player_input:click run function zz.player_input:item/right_click/hold_end
 
