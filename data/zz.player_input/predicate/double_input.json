@@ -1,0 +1,43 @@
+[
+    {
+        "condition": "value_check",
+        "value": {
+            "type": "score",
+            "score": "pliS.time",
+            "target": {
+                "type": "fixed",
+                "name": "#pliH.interval"
+            }
+        },
+        "range": {
+            "min": {
+                "type": "storage",
+                "path": "settings.double_input_range.min",
+                "storage": "player_input:zz"
+            },
+            "max": {
+                "type": "storage",
+                "path": "settings.double_input_range.max",
+                "storage": "player_input:zz"
+            }
+        }
+    },
+    {
+        "condition": "inverted",
+        "term": {
+            "condition": "value_check",
+            "value": {
+                "type": "score",
+                "score": "pliS.time",
+                "target": {
+                    "type": "fixed",
+                    "name": "#pliH.mode"
+                }
+            },
+            "range": {
+                "min": 1,
+                "max": 9
+            }
+        }
+    }
+]

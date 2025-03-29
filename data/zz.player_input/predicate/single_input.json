@@ -14,7 +14,7 @@
             "range": {
                 "min": {
                     "type": "storage",
-                    "path": "settings.click_interval",
+                    "path": "settings.input_interval",
                     "storage": "player_input:zz"
                 },
                 "max": 2147483647
@@ -24,7 +24,7 @@
             "condition": "inverted",
             "term": {
                 "condition": "reference",
-                "name": "zz.player_input:double_click"
+                "name": "zz.player_input:double_input"
             }
         }
     ]

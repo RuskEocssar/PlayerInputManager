@@ -1,5 +1,5 @@
-#> zz.player_input:key/event/tap
-# 共通実行
+#> zz.player_input:common/execute
+# イベント実行
 # @within
 #   function zz.player_input:**
 
@@ -9,4 +9,4 @@
     # ループして実行
     data modify storage player_input:zz macro.command set from storage player_input:zz macro.list[-1]
     data remove storage player_input:zz macro.list[-1]
-    function zz.player_input:key/event/macro/loop with storage player_input:zz macro
+    function zz.player_input:common/macro/loop with storage player_input:zz macro

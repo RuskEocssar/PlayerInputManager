@@ -1,5 +1,5 @@
 #> zz.player_input:key/main_root
-# プレイヤーの進捗を解除
+# ルートエンティティからキー入力によるイベントを実行
 # @within
 #   function zz.player_input:**
 

@@ -33,15 +33,15 @@
 
 "minecraft:custom_data" : {
     click_event : {
-        click : <string>,           | ("") シングルクリックのときに実行するコマンド。
-        double_click : <string>,    | ("") ダブルクリックのときに実行するコマンド。設定されていない場合は、clickに設定したコマンドが実行される。
+        single_input : <string>,    | ("") シングルクリックのときに実行するコマンド。
+        double_input : <string>,    | ("") ダブルクリックのときに実行するコマンド。設定されていない場合は、clickに設定したコマンドが実行される。
         hold : <string>,            | ("") 長押し中に実行するコマンド。長押し中はclick、double_clickは実行されない。
         hold_init : <string>,       | ("") 長押しを開始したときに実行するコマンド。
         hold_end : <string>,        | ("") 長押しを終了したときに実行するコマンド。
         
-        click_interval : <int>,     | (1) 1回のクリックから、次のクリックまで何tickの間隔が空いた場合に断続的なクリックとするかの設定。
+        input_interval : <int>,     | (1) 1回のクリックから、次のクリックまで何tickの間隔が空いた場合に断続的なクリックとするかの設定。
         hold_threshold : <int>,     | (4) クリックが何tickの間連続ししたら長押しとするかの設定。
-        double_click_range : {      | ダブルクリックの判定についてのパラメーター。
+        double_input_range : {       | ダブルクリックの判定についてのパラメーター。
             min : <int>,                | (2) 最小値。
             max : <int>,                | (5) 最大値。
         }
@@ -54,16 +54,16 @@
 ```
 
 ## ストレージフォーマット
-　`click_interval` `hold_threshold` `double_click_range`については共通設定としてストレージ`player_input:`から設定することもできます。  
+　`input_interval` `hold_threshold` `double_input_range`については共通設定としてストレージ`player_input:`から設定することもできます。  
 アイテムにこれらのパラメーターが設定されていた場合は、アイテムのパラメーターが優先されます。
 
 ```html
 * <>内はデータ型 ()内は初期値
 
 player_input: {
-    click_interval : <int>,     | (1) 1回のクリックから、次のクリックまで何tickの間隔が空いた場合に断続的なクリックとするかの設定。
+    input_interval : <int>,     | (1) 1回のクリックから、次のクリックまで何tickの間隔が空いた場合に断続的なクリックとするかの設定。
     hold_threshold : <int>,     | (4) クリックが何tickの間連続ししたら長押しとするかの設定。
-    double_click_range : {      | ダブルクリックの判定についてのパラメーター。
+    double_input_range : {       | ダブルクリックの判定についてのパラメーター。
         min : <int>,                | (2) 最小値。
         max : <int>,                | (5) 最大値。
     }
@@ -84,9 +84,9 @@ give @s recovery_compass[custom_data={click_event:{4t_hold:true, click:"#> click
 give @s recovery_compass[custom_data={click_event:{click:"#> click"}},use_cooldown={seconds:3f,cooldown_group:"a"}]
 
 # ストレージからの設定変更 (0秒で消費されるアイテムなど、長押し時に4tick間隔になるアイテムは下記のようにすると綺麗な挙動になる)
-data modify storage player_input: click_interval set value 4
+data modify storage player_input: input_interval set value 4
 data modify storage player_input: hold_threshold set value 4
-data modify storage player_input: double_click_range set value {min:1,max:3}
+data modify storage player_input: double_input_range set value {min:1,max:3}
 ```
 
 player_input:zz query{

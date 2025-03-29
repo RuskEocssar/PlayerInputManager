@@ -8,11 +8,11 @@
 #       forward : { -> 前進キーの取得設定
 #           log -> (true) 入力履歴に記録するかどうか
 #           tap -> ("") キーを一回押したとき
-#           double_tap -> ("") キーを素早く二回押したとき
+#           double_input -> ("") キーを素早く二回押したとき
 #           hold -> ("") キーを長押ししているとき
 #           hold_init -> ("") キーの長押しがを開始したとき
 #           hold_end -> ("") キーの長押しを終了したとき
-#           every_tap -> ("") キーを押しているとき毎tick
+#           every_input -> ("") キーを押しているとき毎tick
 #           other -> ("") ダブルタップまたは長押しがされていないとき毎tick
 #       }
 #       backward : 同上
@@ -26,13 +26,13 @@
 ## 入力を取得
     data modify storage player_input:zz in set value {\
         name:"",everyone:false,\
-        forward :{tap:"",double_tap:"",hold:"",hold_init:"",hold_end:"",every_tap:"",other:""},\
-        backward    :{tap:"",double_tap:"",hold:"",hold_init:"",hold_end:"",every_tap:"",other:""},\
-        right   :{tap:"",double_tap:"",hold:"",hold_init:"",hold_end:"",every_tap:"",other:""},\
-        left    :{tap:"",double_tap:"",hold:"",hold_init:"",hold_end:"",every_tap:"",other:""},\
-        jump    :{tap:"",double_tap:"",hold:"",hold_init:"",hold_end:"",every_tap:"",other:""},\
-        sneak   :{tap:"",double_tap:"",hold:"",hold_init:"",hold_end:"",every_tap:"",other:""},\
-        sprint  :{tap:"",double_tap:"",hold:"",hold_init:"",hold_end:"",every_tap:"",other:""}\
+        forward :{tap:"",double_input:"",hold:"",hold_init:"",hold_end:"",every_input:"",other:""},\
+        backward    :{tap:"",double_input:"",hold:"",hold_init:"",hold_end:"",every_input:"",other:""},\
+        right   :{tap:"",double_input:"",hold:"",hold_init:"",hold_end:"",every_input:"",other:""},\
+        left    :{tap:"",double_input:"",hold:"",hold_init:"",hold_end:"",every_input:"",other:""},\
+        jump    :{tap:"",double_input:"",hold:"",hold_init:"",hold_end:"",every_input:"",other:""},\
+        sneak   :{tap:"",double_input:"",hold:"",hold_init:"",hold_end:"",every_input:"",other:""},\
+        sprint  :{tap:"",double_input:"",hold:"",hold_init:"",hold_end:"",every_input:"",other:""}\
     }
     data modify storage player_input:zz in merge from storage player_input: key_input
     data modify storage player_input:zz in merge from storage player_input: in

@@ -15,7 +15,7 @@
                 "min": 0,
                 "max": {
                     "type": "storage",
-                    "path": "settings.click_interval",
+                    "path": "settings.input_interval",
                     "storage": "player_input:zz"
                 }
             }
@@ -34,7 +34,7 @@
                 "min": 0,
                 "max": {
                     "type": "storage",
-                    "path": "settings.double_click_range.max",
+                    "path": "settings.double_input_range.max",
                     "storage": "player_input:zz"
                 }
             }

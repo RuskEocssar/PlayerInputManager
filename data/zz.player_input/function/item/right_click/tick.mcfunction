@@ -3,9 +3,8 @@
 # @within
 #   function zz.player_input:**
 
-## データを設定
-    data modify storage player_input:zz settings set from storage player_input: click_item
-
-## アイテムから常時実行
-    execute as 4fe002bb-0-2-0-a00000001 on passengers if entity @s[tag=pliT.active.click_item] run function zz.player_input:item/right_click/tick_root
-    execute at 4fe002bb-0-2-0-a00000001 if entity @e[tag=pliT.active.click_item,distance=..1,limit=1,type=item] run schedule function zz.player_input:item/right_click/tick 1t
+## 常時実行
+    # アイテムから実行
+    execute as 4fe002bb-0-2-0-a00000001 on passengers if entity @s[scores={pliS.time.click_item=1..}] run function zz.player_input:item/right_click/tick_root
+    # ループ
+    execute at 4fe002bb-0-2-0-a00000001 if entity @e[scores={pliS.time.click_item=1..},distance=..1,limit=1,type=item] run schedule function zz.player_input:item/right_click/tick 1t

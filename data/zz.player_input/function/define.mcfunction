@@ -7,28 +7,39 @@
 ## Scoreboard objective
     #> Puclic
     # @public
-        scoreboard objectives add time.click_item dummy "クリックの保持時間"
-        scoreboard objectives add time.forward dummy "前進の保持時間"
-        scoreboard objectives add time.backward dummy "後退の保持時間"
-        scoreboard objectives add time.right dummy "右移動の保持時間"
-        scoreboard objectives add time.left dummy "左移動の保持時間"
-        scoreboard objectives add time.jump dummy "ジャンプの保持時間"
-        scoreboard objectives add time.sneak dummy "スニークの保持時間"
-        scoreboard objectives add time.sprint dummy "ダッシュの保持時間"
+        # クリックの保持時間
+            scoreboard objectives add time.click_item dummy "クリックの保持時間"
+            scoreboard objectives add time.forward dummy "前進の保持時間"
+            scoreboard objectives add time.backward dummy "後退の保持時間"
+            scoreboard objectives add time.right dummy "右移動の保持時間"
+            scoreboard objectives add time.left dummy "左移動の保持時間"
+            scoreboard objectives add time.jump dummy "ジャンプの保持時間"
+            scoreboard objectives add time.sneak dummy "スニークの保持時間"
+            scoreboard objectives add time.sprint dummy "ダッシュの保持時間"
+        # クリックの状態 0->デフォルト, 1->ダブルクリック後, 2->ホールド中
+            scoreboard objectives add mode.click_item dummy "クリックの状態"
+            scoreboard objectives add mode.forward dummy "前進の状態"
+            scoreboard objectives add mode.backward dummy "後退の状態"
+            scoreboard objectives add mode.right dummy "右移動の状態"
+            scoreboard objectives add mode.left dummy "左移動の状態"
+            scoreboard objectives add mode.jump dummy "ジャンプの状態"
+            scoreboard objectives add mode.sneak dummy "スニークの状態"
+            scoreboard objectives add mode.sprint dummy "ダッシュの状態"
     #> Local (core)
     # @within player_input:**
         scoreboard objectives add pliS. dummy "汎用"
         scoreboard objectives add pliS.logout minecraft.custom:leave_game "ゲーム退出回数"
         scoreboard objectives add pliS.time dummy "時間共通"
         scoreboard objectives add pliS.time.2 dummy "時間共通"
-        scoreboard objectives add pliS.time.click_item dummy "クリックの間隔"
-        scoreboard objectives add pliS.time.forward dummy "前進の間隔"
-        scoreboard objectives add pliS.time.backward dummy "後退の間隔"
-        scoreboard objectives add pliS.time.right dummy "右移動の間隔"
-        scoreboard objectives add pliS.time.left dummy "左移動の間隔"
-        scoreboard objectives add pliS.time.jump dummy "ジャンプの間隔"
-        scoreboard objectives add pliS.time.sneak dummy "スニークの間隔"
-        scoreboard objectives add pliS.time.sprint dummy "ダッシュの間隔"
+        # 内部判定用の時間
+            scoreboard objectives add pliS.time.click_item dummy "クリックの間隔"
+            scoreboard objectives add pliS.time.forward dummy "前進の間隔"
+            scoreboard objectives add pliS.time.backward dummy "後退の間隔"
+            scoreboard objectives add pliS.time.right dummy "右移動の間隔"
+            scoreboard objectives add pliS.time.left dummy "左移動の間隔"
+            scoreboard objectives add pliS.time.jump dummy "ジャンプの間隔"
+            scoreboard objectives add pliS.time.sneak dummy "スニークの間隔"
+            scoreboard objectives add pliS.time.sprint dummy "ダッシュの間隔"
 
 ## Score Holder
     #> Local

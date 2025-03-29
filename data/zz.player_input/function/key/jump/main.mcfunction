@@ -5,17 +5,17 @@
 
 ## クリックの判定
     # 初期化
-    data modify storage player_input:zz key_event set value []
+    data modify storage player_input:zz events set value []
     data modify storage player_input:zz macro.list set value []
     # データの取得
     scoreboard players operation #pliH.time pliS.time = @s time.jump
     scoreboard players operation #pliH.interval pliS.time = @s pliS.time.jump
     data modify storage player_input:zz key_type set value "jump"
     data modify storage player_input:zz settings set from storage player_input: key_input
-    data modify storage player_input:zz key_event append from storage player_input:zz query[].jump
+    data modify storage player_input:zz events append from storage player_input:zz query[].jump
     # イベントの実行
-    execute if predicate zz.player_input:single_click unless predicate zz.player_input:hold run function zz.player_input:key/event/tap
-    execute if predicate zz.player_input:double_click unless predicate zz.player_input:hold run function zz.player_input:key/event/double_tap
+    execute if predicate zz.player_input:single_input unless predicate zz.player_input:hold run function zz.player_input:key/event/tap
+    execute if predicate zz.player_input:double_input unless predicate zz.player_input:hold run function zz.player_input:key/event/double_input
     execute unless entity @s[tag=pliT.hold.jump] if predicate zz.player_input:hold run function zz.player_input:key/event/hold_init
     execute unless entity @s[tag=pliT.hold.jump] if predicate zz.player_input:hold run tag @s add pliT.hold.jump
     execute if predicate zz.player_input:hold run function zz.player_input:key/event/hold

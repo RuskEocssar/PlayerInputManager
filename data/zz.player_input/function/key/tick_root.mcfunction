@@ -1,5 +1,5 @@
 #> zz.player_input:tick_root
-# 常時実行
+# ルートエンティティから常時実行
 # @within
 #   function zz.player_input:**
 
@@ -7,10 +7,10 @@
     scoreboard players set @s pliS. 0
 
 ## データを取得
-    data modify storage player_input: history set from entity @s data.history
     data modify storage player_input:zz query set value []
     data modify storage player_input:zz query append from entity @s data.query[]
     data modify storage player_input:zz query append from storage player_input: query[]
+    data modify storage player_input: history set from entity @s data.history
     execute store result storage player_input:zz gametime int 1 run time query gametime
 
 ## 常時実行

@@ -1,4 +1,4 @@
-#> zz.player_input:key/event/hold_init
+#> zz.player_input:common/hold_init
 # ホールド開始時実行
 # @within
 #   function zz.player_input:**
@@ -10,6 +10,8 @@
     data remove storage player_input: history[0]
 
 ## 個別処理
-    data modify storage player_input:zz macro.list append from storage player_input:zz key_event[].hold_init
-    # 共通処理
-    function zz.player_input:key/event/common
+    # スコア処理
+    scoreboard players set #pliH.mode.temp pliS.time 2
+    # イベント実行
+    data modify storage player_input:zz macro.list append from storage player_input:zz events[].hold_init
+    function zz.player_input:common/event
