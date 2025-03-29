@@ -1,3 +1,4 @@
+scoreboard objectives add boost_jump dummy
 
 execute if score @s boost_jump matches 3.. run return fail
 scoreboard players add @s boost_jump 1
