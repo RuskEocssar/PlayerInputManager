@@ -10,17 +10,17 @@
     # データの取得
     scoreboard players operation #pliH.time pliS.time = @s time.right
     scoreboard players operation #pliH.interval pliS.time = @s pliS.time.right
+    scoreboard players operation #pliH.mode pliS.time = @s mode.right
     data modify storage player_input:zz key_type set value "right"
     data modify storage player_input:zz settings set from storage player_input: key_input
     data modify storage player_input:zz events append from storage player_input:zz query[].right
-    # イベントの実行
-    execute if predicate zz.player_input:single_input unless predicate zz.player_input:hold run function zz.player_input:key/event/tap
-    execute if predicate zz.player_input:double_input unless predicate zz.player_input:hold run function zz.player_input:key/event/double_input
-    execute unless entity @s[tag=pliT.hold.right] if predicate zz.player_input:hold run function zz.player_input:key/event/hold_init
-    execute unless entity @s[tag=pliT.hold.right] if predicate zz.player_input:hold run tag @s add pliT.hold.right
-    execute if predicate zz.player_input:hold run function zz.player_input:key/event/hold
-    # クリック判定用時間のリセット
-    scoreboard players set @s pliS.time.right 0
-    execute unless score @s time.right matches 0.. run scoreboard players set @s time.right 0
-    # 終了処理
+    # 共通処理
+    function zz.player_input:common/main
+
+## データの反映
+    scoreboard players operation @s time.right = #pliH.time pliS.time
+    scoreboard players operation @s pliS.time.right = #pliH.interval pliS.time
+    scoreboard players operation @s mode.right = #pliH.mode pliS.time
+
+## 終了処理
     return 1
