@@ -21,5 +21,5 @@
 
 ## データを反映
     data modify entity @s data.history set from storage player_input: history
-    scoreboard players set #pliH. pliS. 0
+    scoreboard players set #pliH. pliS. 1
     scoreboard players set @s pliS. 1

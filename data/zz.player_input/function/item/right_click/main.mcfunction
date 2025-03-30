@@ -16,7 +16,7 @@
         scoreboard players set #pliH. pliS. 0
         execute as 4fe002bb-0-2-0-a00000001 on passengers if function zz.player_input:root/check_origin run function zz.player_input:item/right_click/set_item
         # 見つからない場合は新たに召喚
-        execute if score #pliH. pliS. matches 0 at 4fe002bb-0-2-0-a00000001 run function zz.player_input:root/summon
+        execute if score #pliH. pliS. matches 0 at 4fe002bb-0-2-0-a00000001 if function zz.player_input:root/summon on passengers if function zz.player_input:root/check_origin run function zz.player_input:item/right_click/set_item
     # 後処理
     tag @s remove _player
 
