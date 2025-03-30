@@ -1,4 +1,4 @@
-say player_input:set_event
+#> player_input:set_event
 # 入力の取得を開始する
 # @public
 # @input

@@ -1,4 +1,4 @@
-say zz.player_input:key/set_one
+#> zz.player_input:key/set_one
 # イベントの設定　プレイヤー別
 # @within
 #   function player_input:start
