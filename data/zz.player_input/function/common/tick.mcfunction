@@ -5,7 +5,7 @@
 
 ## イベント実行
     # ホールド
-    execute if score #pliH.mode pliS.time matches 2 if predicate zz.player_input:hold if predicate zz.player_input:input run function zz.player_input:common/hold_end
+    execute if score #pliH.mode pliS.time matches 2 if predicate zz.player_input:hold if predicate zz.player_input:input at @s run function zz.player_input:common/hold_end
 
 ## スコア加算
     execute if score #pliH.time pliS.time matches 0.. run scoreboard players add #pliH.time pliS.time 1

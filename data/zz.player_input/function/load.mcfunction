@@ -12,4 +12,4 @@
 
 ## アイテム管理用のエンティティ
     execute unless score 4fe002bb-0000-0002-0000-000a00000001 pliS. matches 1 store success score 4fe002bb-0000-0002-0000-000a00000001 pliS. run summon interaction 0 1000 0 {Tags:["pliT.","pliT.root"],UUID:[I;1340080827,2,10,1],width:0f,height:0f}
-    execute unless score 4fe002bb-0000-0006-0000-000a00000001 pliS. matches 1 store success score 4fe002bb-0000-0006-0000-000a00000001 pliS. run summon item 0 1000 0 {Tags:["pliT.","pliT.item"],UUID:[I;1340080827,6,10,1],Item:{id:"stick",components:{max_stack_size:1}},PickupDelay:32767s,Age:-32767s,NoGravity:true,Invulnerable:true}
+    execute unless score 4fe002bb-0000-0006-0000-000a00000001 pliS. matches 1 store success score 4fe002bb-0000-0006-0000-000a00000001 pliS. run summon item 0 1000 0 {Tags:["pliT.","pliT.item"],UUID:[I;1340080827,6,10,1],Item:{id:"stick",components:{max_stack_size:1}},PickupDelay:32767s,Age:-32768s,NoGravity:true,Invulnerable:true}
