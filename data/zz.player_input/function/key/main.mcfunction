@@ -3,6 +3,9 @@
 # @within
 #   advancement zz.player_input:key_input
 
+## 必要ないときは中断
+    execute unless score #pliH.key pliS. matches 1.. run return fail
+
 ## アイテムデータを反映
     tag @s add _player
     # 紐づけされたアイテムエンティティを検索

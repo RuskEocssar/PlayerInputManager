@@ -31,6 +31,7 @@
 ## 常時実行を開始
     scoreboard players set #pliH.key pliS. 1
     schedule function zz.player_input:key/tick 1t replace
+    advancement revoke @s only zz.player_input:key_input
 
 ## everyone:trueかどうかで処理を分岐
     execute if data storage player_input:zz in{everyone:false} as @s run function zz.player_input:key/event/set_one
