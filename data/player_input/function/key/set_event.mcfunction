@@ -1,4 +1,4 @@
-#> player_input:set_event
+#> player_input:key/set_event
 # 入力の取得を開始する
 # @public
 # @input
@@ -27,6 +27,10 @@
     data modify storage player_input:zz in set value {name:"",everyone:false,replace:true,forward:{},backward:{},right:{},left:{},jump:{},sneak:{},sprint:{}}
     data modify storage player_input:zz in merge from storage player_input: key_input
     data modify storage player_input:zz in merge from storage player_input: in
+
+## 常時実行を開始
+    scoreboard players set #pliH.key pliS. 1
+    schedule function zz.player_input:key/tick 1t replace
 
 ## everyone:trueかどうかで処理を分岐
     execute if data storage player_input:zz in{everyone:false} as @s run function zz.player_input:key/event/set_one

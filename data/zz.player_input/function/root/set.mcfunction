@@ -1,4 +1,4 @@
-#> zz.player_input:main/dummy/set
+#> zz.player_input:root/set
 # アイテムエンティティのデータを設定
 # @within
 #   function zz.player_input:**
