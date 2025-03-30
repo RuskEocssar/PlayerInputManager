@@ -4,5 +4,6 @@
 #   function player_input:start
 
 ## データを取得
-    $data modify entity @s data.query[{name:"$(name)"}] $(mode) from storage player_input:zz in
     scoreboard players set #pliH. pliS. 1
+    $data modify entity @s data.query[{name:"$(name)"}] merge from storage player_input:zz in
+    $execute unless data storage player_input:zz in{replace:false} run data modify entity @s data.query[{name:"$(name)"}] set from storage player_input:zz in

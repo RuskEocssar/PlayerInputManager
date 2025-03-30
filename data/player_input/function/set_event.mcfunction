@@ -27,11 +27,7 @@
     data modify storage player_input:zz in set value {name:"",everyone:false,replace:true,forward:{},backward:{},right:{},left:{},jump:{},sneak:{},sprint:{}}
     data modify storage player_input:zz in merge from storage player_input: key_input
     data modify storage player_input:zz in merge from storage player_input: in
-    # マクロ用入力
-    data modify storage player_input:zz arg set value {name:"",mode:"set"}
-    data modify storage player_input:zz arg.name set from storage player_input:zz in.name
-    execute if data storage player_input:zz in{replace:false} run data modify storage player_input:zz arg.mode set value "merge"
 
 ## everyone:trueかどうかで処理を分岐
     execute if data storage player_input:zz in{everyone:false} as @s run function zz.player_input:key/event/set_one
-    execute if data storage player_input:zz in{everyone:true} run function zz.player_input:key/event/set_public with storage player_input:zz arg
+    execute if data storage player_input:zz in{everyone:true} run function zz.player_input:key/event/set_public with storage player_input:zz in
