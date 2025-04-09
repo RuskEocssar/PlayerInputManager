@@ -5,6 +5,7 @@
 対応バージョン：1.21.5
 
 <img src="/doc/player_input.gif" alt="player input gif" width="500">
+<img src="/doc/click_item.gif" alt="click item gif" width="500">
 
 ## 主な機能
 - 前後左右移動(WASD)、ジャンプ(space)、スニーク(shift)、ダッシュ(ctrl)、アイテムの右クリックの操作に対応
