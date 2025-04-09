@@ -1,5 +1,5 @@
 #> zz.player_input:item/slot/change_hotbar
-# アイテムをホットバーに置いた時に実行されるファンクション
+# アイテムがホットバーに移動したときに実行されるファンクション
 # @within
 #   advancement zz.player_input:change_slot
 

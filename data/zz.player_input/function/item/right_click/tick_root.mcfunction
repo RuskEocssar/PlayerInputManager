@@ -1,5 +1,5 @@
 #> zz.player_input:item/right_click/tick_root
-# クリック判定用のスコア加算
+# タップ判定用のスコア加算
 # @within
 #   function zz.player_input:**
 

@@ -1,5 +1,5 @@
 #> zz.player_input:item/slot/change_offhand
-# アイテムをクリックしたときに実行されるファンクション
+# アイテムがオフハンドに移動したときに実行されるファンクション
 # @within
 #   advancement zz.player_input:change_slot
 

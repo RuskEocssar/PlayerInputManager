@@ -1,5 +1,5 @@
 #> zz.player_input:item/right_click/main
-# アイテムをクリックしたときに実行されるファンクション
+# アイテムをタップしたときに実行されるファンクション
 # @within
 #   advancement zz.player_input:input_item
 
@@ -7,7 +7,7 @@
     tag @s add _player
     # アイテムデータを初期化
     data modify storage player_input: item set value {components:{"minecraft:custom_data":{click_event:{click:"",double_click:"",hold:"",hold_init:"",hold_end:""}}}}
-    # クリックのモードを取得
+    # タップのモードを取得
     execute if entity @s[advancements={zz.player_input:item/right_click={useing_item_mainhand=true}}] run scoreboard players set #pliH.player pliS. 0
     execute if entity @s[advancements={zz.player_input:item/right_click={useing_item_offhand=true}}] run scoreboard players set #pliH.player pliS. 1
     execute if entity @s[advancements={zz.player_input:item/right_click={consume_item_offhand=true}}] run scoreboard players set #pliH.player pliS. 2
@@ -21,7 +21,7 @@
     tag @s remove _player
 
 ## イベントの実行
-    # クリックの判定
+    # タップの判定
         # ストレージの設定
         data modify storage player_input:zz events set value []
         data modify storage player_input:zz macro.list set value []

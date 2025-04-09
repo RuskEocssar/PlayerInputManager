@@ -1,5 +1,5 @@
 #> zz.player_input:main/dummy/set_item
-# アイテムをクリックしたときに実行されるファンクション
+# アイテムをタップしたときに実行されるファンクション
 # @within
 #   function zz.player_input:**
 
