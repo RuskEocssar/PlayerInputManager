@@ -9,7 +9,7 @@ tp @s ~ ~ ~
 effect give @s levitation 1 125 true
 tag @s add boost
 tag @s add effect
-schedule function player_input:debug/boost_tick 1t
+schedule function player_input:example/boost_tick 1t
 
 particle cloud ~ ~ ~ 0.2 0 0.2 0 10
 playsound entity.breeze.jump ambient @a ~ ~ ~ 1 1

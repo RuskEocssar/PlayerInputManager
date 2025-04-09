@@ -175,17 +175,28 @@ player_input: {
 
 # 使用例
 ```mcfunction
-# アイテム 長押し時 毎tick判定
-give @s recovery_compass[custom_data={click_event:{click:"#> click", double_click:"#> double click", hold:"#> hold", hold_init:"#> hold init", hold_end:"#> hold end"}}]
+# ジャンプ長押しで空中ジャンプ(個別設定)
+data modify storage player_input: in set value {name:"debug1",jump:{hold_init:"function player_input:example/boost"}}
+execute as @p run function key/set_event
 
-# アイテム 長押し時 4tick毎判定
-give @s recovery_compass[custom_data={click_event:{4t_hold:true, click:"#> click", double_click:"#> double click", hold:"#> hold", hold_init:"#> hold init", hold_end:"#> hold end"}}]
+# 前進をダブルタップでスピードアップ(全体設定)
+data modify storage player_input: in set value {name:"debug2",everyone:true,forward:{double_input:"function player_input:example/dush"}}
+function key/set_event
+
+# アイテム
+give @s recovery_compass[custom_data={click_event:{click:"say click", double_click:"say double click", hold_init:"say hold init", hold_end:"say hold end"}}]
+
+# アイテム 4tick毎判定
+give @s recovery_compass[custom_data={click_event:{4t_hold:true, click:"say click"}}]
 
 # アイテム クールダウン付き
-give @s recovery_compass[custom_data={click_event:{click:"#> click"}},use_cooldown={seconds:3f,cooldown_group:"a"}]
+give @s recovery_compass[custom_data={click_event:{click:"say click"}},use_cooldown={seconds:3f,cooldown_group:"a"}]
 
-# ストレージからの設定変更 (0秒で消費されるアイテムなど、長押し時に4tick間隔になるアイテムは下記のようにすると綺麗な挙動になる)
+# ストレージからの設定変更
 data modify storage player_input: input_interval set value 4
 data modify storage player_input: hold_threshold set value 4
 data modify storage player_input: double_input_range set value {min:1,max:3}
+
+# player_input:executeを使った実行
+execute as @p run function player_input:execute {func:"key/set_event",in:{name:"debug1",jump:{hold_init:"function player_input:example/boost"}}}
 ```
