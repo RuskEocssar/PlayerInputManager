@@ -4,7 +4,7 @@
 #   function zz.player_input:**
 
 ## 履歴に記録
-    data modify storage player_input: history append value {key:"",action:"input",action_type:"input",time:0}
+    data modify storage player_input: history append value {key:"",action:"single_input",action_type:"input",time:0}
     data modify storage player_input: history[-1].key set from storage player_input:zz key_type
     data modify storage player_input: history[-1].time set from storage player_input:zz gametime
     data remove storage player_input: history[0]

@@ -15,6 +15,7 @@
 - 利用頻度が高い`consume_seconds`が0または非常に大きいパターンなどのコンポーネント記述の省略・簡略化
 - ダブルタップや長押しの判定用のパラメータの個別設定
 - 入力の履歴を参照し、コマンド入力などの判定ができる
+- キー入力の組み合わせで特定のコマンドを実行するコマンド入力のシステム
 
 ## 目次
 - [使い方](#使い方)
@@ -24,7 +25,6 @@
   - [ファンクション](#ファンクション)
 - [スコアボード](#スコアボード)
 - [使用例](#使用例)
-
 
 # 使い方
 プレイヤーのキー入力にイベントを設定する場合と、アイテムの右クリックにイベントを設定する場合で方法が異なります。
@@ -70,6 +70,25 @@ player_input: in {
     sprint : {                  | ダッシュキーを押したときのコマンドの設定
         ...,                        | forwardと同じフォーマット
     },
+    commands : [                | コマンドのリスト
+        {
+            command : <string>,         | コマンド入力が成功したときに実行されるコマンド
+            exclude_key : <list>,       | 判定しないキー このキーをおしてもコマンド判定は中断されない
+            exclude_hold : <boolen>,    | (true) ホールドを判定するかしないか
+            list:[
+                {
+                    key : <string>,         | キーの名前
+                    action : <string>,      | ("input") 動作の名前 "input", "hold_init", "hold_end"
+                    time : {                | 前回の入力から何tickで判定するか
+                        min : <int>,            | (0) 下限
+                        max : <int>,            | (5) 上限
+                    }
+                },
+                ...,
+            ],
+        },
+        ...,
+    ]
 }
 ```
 
@@ -81,7 +100,7 @@ player_input: in {
 ```html
 * <>内はデータ型 ()内は初期値
 
-player_input: in {
+player_input: in{
     name : <string>,            | ("") クエリの名前
     everyone : <boolen>,        | (false) 共通設定を削除するか個別設定を削除するか
 }
@@ -151,6 +170,63 @@ player_input: {
 ### `player_input:execute`
 　ファンクションの入力設定と実行を、マクロによって1行で行うためのファンクションです。マクロを使う分負荷がやや高くなりますが、簡易的に実行することができます。
 
+**入力フォーマット**
+```html
+* <>内はデータ型 ()内は初期値
+
+function player_input:execute {                 
+    func : <string>,        | 実行するファンクション player_input:以降のファンクションのパスを記入する 例:player_input:key/set_event -> key/set_event
+    in : <comapund>,        | ファンクションの入力 player_input: に設定するNBTデータ
+}
+```
+
+### `player_input:key/get_history`
+　キー入力の履歴を取得するファンクション。`player_input: history`に履歴が格納される。
+
+**出力フォーマット**
+```html
+* <>内はデータ型 ()内は初期値
+
+player_input: history[
+    {
+        key : <string>,             | 入力されたキー "forward", "backward", "right", "left", "jump", "sneak", "sprint"
+        action : <string>,          | キーの入力タイプ "single_input", "double_input", "hold_init", "hold_end"
+        action_type : <string>,     | キーの入力タイプ その2 "input", "hold_init", "hold_end"
+        time : <int>,               | 入力されたゲームタイム
+    }
+]
+```
+
+### `player_input:command/check`
+　キー入力の履歴を参照し、コマンド入力の判定を行い、成功していたらコマンドを実行する。
+
+**出力フォーマット**
+```html
+* <>内はデータ型 ()内は初期値
+
+player_input: in{
+    delay : <int>,              | 何tick前の入力まで判定をするか
+    commands : [                | コマンドのリスト
+        {
+            command : <string>,         | コマンド入力が成功したときに実行されるコマンド
+            exclude_key : <list>,       | 判定しないキー このキーをおしてもコマンド判定は中断されない
+            exclude_hold : <boolen>,    | (true) ホールドを判定するかしないか
+            list:[
+                {
+                    key : <string>,         | キーの名前
+                    action : <string>,      | ("input") 動作の名前 "input", "hold_init", "hold_end"
+                    time : {                | 前回の入力から何tickで判定するか
+                        min : <int>,            | (0) 下限
+                        max : <int>,            | (5) 上限
+                    }
+                },
+                ...,
+            ],
+        },
+        ...,
+    ]
+}
+```
 
 # スコアボード
 　このデータパックで使用されるスコアボードのうち、ユーザ向けに用意しているものは次の通りです。
