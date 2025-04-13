@@ -11,6 +11,7 @@
     
 ## 個別処理
     # スコア処理
+    scoreboard players set #pliH.input pliS. 1
     scoreboard players set #pliH.mode.temp pliS.time 1
     scoreboard players set #pliH.time pliS.time 0
     # イベント実行

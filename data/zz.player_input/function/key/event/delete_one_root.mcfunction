@@ -5,4 +5,4 @@
 
 ## データを取得
     $data remove entity @s data.query[{name:"$(name)"}]
-    scoreboard players set #pliH. pliS. 1
+    scoreboard players set #pliH.check_player pliS. 1

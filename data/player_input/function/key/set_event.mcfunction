@@ -20,6 +20,25 @@
 #       jump : 同上
 #       sneak : 同上
 #       sprint : 同上
+#       commands:[  -> コマンドのリスト
+#         {
+#           command:<string>, -> コマンド入力が成功したときに実行されるコマンド
+#           exclude_key:<list>, -> 判定しないキー このキーをおしてもコマンド判定は中断されない
+#           exclude_hold:<boolen>, -> ホールドを判定するかしないか
+#           list:[
+#             {
+#               key:<string>, -> キーの名前
+#               action:<string>, -> ("input") 動作の名前 "input", "hold_init", "hold_end"
+#               time:{      -> 前回の入力から何tickで判定するか
+#                 min:<int>, -> (0) 下限
+#                 max:<int>, -> (5) 上限
+#               }
+#             },
+#             ...,
+#           ],
+#         },
+#         ...,
+#       ]
 #   }
 
 ## 入力を取得

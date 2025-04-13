@@ -4,6 +4,7 @@
 #   function zz.player_input:**
 
 ## データを取得
+    scoreboard players set #pliH.input pliS. 0
     data modify storage player_input: history set from entity @s data.history
     data modify storage player_input:zz query set value []
     data modify storage player_input:zz query append from entity @s data.query[]
@@ -21,5 +22,8 @@
 
 ## データを反映
     data modify entity @s data.history set from storage player_input: history
-    scoreboard players set #pliH. pliS. 1
+    scoreboard players set #pliH.check_player pliS. 1
     scoreboard players set @s pliS. 1
+    
+## コマンド入力の判定
+    execute if score #pliH.input pliS. matches 1 run function zz.player_input:command/key/main

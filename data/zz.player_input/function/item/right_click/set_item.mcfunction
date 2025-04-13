@@ -15,4 +15,4 @@
     execute if score #pliH.player pliS. matches 2..3 if data storage player_input: item.components."minecraft:custom_data".click_event{no_consume:true} run tag @s add pliT.item.reset
 
 ## 正否を返す
-    scoreboard players set #pliH. pliS. 1
+    scoreboard players set #pliH.check_player pliS. 1
