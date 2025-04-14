@@ -9,5 +9,13 @@ execute if data storage debug: list[{key:"sprint"}] run data modify storage debu
 execute if data storage debug: list[{key:"sneak"}] run data modify storage debug: list[{key:"sneak"}].key set value {text:"\u2BAF"}
 
 title @s times 0 20 1
-title @s subtitle [{text:" > ",color:"gray"},{nbt:"list[-5].key",storage:"debug:",interpret:true,color:"gold"},{text:" > ",color:"gray"},{nbt:"list[-4].key",storage:"debug:",interpret:true,color:"gold"},{text:" > ",color:"gray"},{nbt:"list[-3].key",storage:"debug:",interpret:true,color:"gold"},{text:" > ",color:"gray"},{nbt:"list[-2].key",storage:"debug:",interpret:true,color:"gold"},{text:" > ",color:"gray"},{nbt:"list[-1].key",storage:"debug:",interpret:true,color:"gold"}]
+title @s subtitle [{text:" > ",color:"gray"},\
+    {nbt:"list[-8].key",storage:"debug:",interpret:true,color:"gold"},{text:" > ",color:"gray"},\
+    {nbt:"list[-7].key",storage:"debug:",interpret:true,color:"gold"},{text:" > ",color:"gray"},\
+    {nbt:"list[-6].key",storage:"debug:",interpret:true,color:"gold"},{text:" > ",color:"gray"},\
+    {nbt:"list[-5].key",storage:"debug:",interpret:true,color:"gold"},{text:" > ",color:"gray"},\
+    {nbt:"list[-4].key",storage:"debug:",interpret:true,color:"gold"},{text:" > ",color:"gray"},\
+    {nbt:"list[-3].key",storage:"debug:",interpret:true,color:"gold"},{text:" > ",color:"gray"},\
+    {nbt:"list[-2].key",storage:"debug:",interpret:true,color:"gold"},{text:" > ",color:"gray"},\
+    {nbt:"list[-1].key",storage:"debug:",interpret:true,color:"gold"}]
 title @s title ""

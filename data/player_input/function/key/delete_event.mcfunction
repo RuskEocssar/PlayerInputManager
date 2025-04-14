@@ -13,7 +13,9 @@
 
 ## everyone:trueかどうかで処理を分岐
     execute if data storage player_input:zz in{everyone:false} run function zz.player_input:key/event/delete_one
-    execute if data storage player_input:zz in{everyone:true} run function zz.player_input:key/event/delete_public with storage player_input:zz in
+    execute if data storage player_input:zz in{everyone:true} as 4fe002bb-0-2-0-a00000001 on passengers run function zz.player_input:key/event/delete_one_root with storage player_input:zz in
+    # 全体に設定されたイベントも削除
+    function zz.player_input:key/event/delete_public with storage player_input:zz in
 
 ## 常時実行を終了する
     execute unless data storage player_input: query[] as 4fe002bb-0-2-0-a00000001 unless function zz.player_input:key/event/check_remain run scoreboard players reset #pliH.key pliS.
