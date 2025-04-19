@@ -75,7 +75,7 @@ player_input: in {
             command : <string>,         | コマンド入力が成功したときに実行されるコマンド
             exclude_key : <list>,       | 判定しないキー このキーをおしてもコマンド判定は中断されない
             exclude_hold : <boolen>,    | (true) ホールドを判定するかしないか
-            clear_history:<boolen>,     | (false) コマンド成功時に履歴を削除（他のコマンドの判定を中断する）かどうか
+            cancel_command:<boolen>,     | (false) コマンド成功時に他のコマンドの判定を中断するかどうか
             list:[
                 {
                     key : <string>,         | キーの名前
@@ -212,7 +212,7 @@ player_input: in{
             command : <string>,         | コマンド入力が成功したときに実行されるコマンド
             exclude_key : <list>,       | 判定しないキー このキーをおしてもコマンド判定は中断されない
             exclude_hold : <boolen>,    | (true) ホールドを判定するかしないか
-            clear_history:<boolen>,     | (false) コマンド成功時に履歴を削除（他のコマンドの判定を中断する）かどうか
+            cancel_command:<boolen>,     | (false) コマンド成功時に他のコマンドの判定を中断するかどうか
             list:[
                 {
                     key : <string>,         | キーの名前
