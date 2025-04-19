@@ -4,7 +4,6 @@
 #   function zz.player_input:**
 
 ## データを取得
-    scoreboard players set #pliH.input pliS. 0
     data modify storage player_input:zz data set from entity @s data
     data modify storage player_input:zz query set value []
     data modify storage player_input:zz query append from storage player_input:zz data.query[]

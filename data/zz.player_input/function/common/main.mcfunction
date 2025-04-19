@@ -4,6 +4,7 @@
 #   function zz.player_input:**
 
 ## クリックの判定
+    scoreboard players set #pliH.input pliS. 0
     # スコアをコピー
     scoreboard players operation #pliH.mode.temp pliS.time = #pliH.mode pliS.time
     # イベントの実行

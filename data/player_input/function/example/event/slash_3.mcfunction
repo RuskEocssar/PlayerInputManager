@@ -53,6 +53,6 @@ execute rotated ~-55 ~ run particle cloud ^ ^ ^4 0.2 0.2 0.2 0 5
 execute positioned ^ ^ ^4.1 as @e[distance=..4] run damage @s 20
 execute positioned ^ ^ ^-4.1 as @e[distance=..4] run damage @s 20
 
-title @s times 0 30 2
+title @s times 0 15 2
 title @s subtitle {text:"\u23F6 > \u23F4 > \u23F7 > \u23F5 > \u23F6：居合十文字切り\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020",color:"gold"}
 title @s title {text:""}
