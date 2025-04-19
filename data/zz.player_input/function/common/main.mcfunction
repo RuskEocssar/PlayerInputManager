@@ -15,3 +15,6 @@
     scoreboard players set #pliH.interval pliS.time 0
     execute unless score #pliH.time pliS.time matches 0.. run scoreboard players set #pliH.time pliS.time 0
     scoreboard players operation #pliH.mode pliS.time = #pliH.mode.temp pliS.time
+    
+## コマンド入力の判定
+    execute if score #pliH.input pliS. matches 1 run function zz.player_input:command/key/main

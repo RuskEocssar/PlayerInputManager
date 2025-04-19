@@ -10,10 +10,10 @@
 
 ## アイテムデータの初期設定
     # 再セットがある場合、見た目を保持するためuse_remainderをセットする
-    execute if data storage player_input: item.components."minecraft:custom_data".click_event{no_consume:true} run data modify storage player_input: item.components."minecraft:use_remainder" set from storage player_input: item
+    execute if data storage player_input: item.components."minecraft:custom_data".click_event{no_consume:true} run data modify storage player_input: item.components."minecraft:use_remainder" merge from storage player_input: item
     execute if data storage player_input: item.components."minecraft:custom_data".click_event{no_consume:true} run data remove storage player_input: item.components."minecraft:use_remainder".components."minecraft:consumable"
     # 4tick毎のオプションがtrueのとき
-    execute if data storage player_input: item.components."minecraft:custom_data".click_event{4t_hold:true} run data modify storage player_input: item.components."minecraft:use_cooldown" set value {seconds:0.000001f}
+    execute if data storage player_input: item.components."minecraft:custom_data".click_event{4t_hold:true} run data modify storage player_input: item.components."minecraft:use_cooldown" merge value {seconds:0.000001f}
 
 ## アイテムを使用可能にする
     # 判定が取れないアイテムの場合、設定する

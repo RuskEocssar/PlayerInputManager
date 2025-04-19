@@ -8,6 +8,7 @@
 #       command:<string>, -> コマンド入力が成功したときに実行されるコマンド
 #       exclude_key:<list>, -> 判定しないキー このキーをおしてもコマンド判定は中断されない
 #       exclude_hold:<boolen>, -> ホールドを判定するかしないか
+#       cancel_command:<boolen>, -> (false) コマンド成功時に他のコマンドの判定を中断するかどうか
 #       list:[
 #         {
 #           key:<string>, -> キーの名前
@@ -29,7 +30,7 @@
 ## コマンド入力の判定
     # 現在時刻の取得
     data modify storage player_input:zz _ set value {gametime:0,time:{min:0,max:5}}
-    execute if data storage player_input:zz in.delay run data modify storage player_input:zz _.time.max set from storage player_input: in.delay
+    execute if data storage player_input: in.delay run data modify storage player_input:zz _.time.max set from storage player_input: in.delay
     execute store result storage player_input:zz _.gametime int 1 run time query gametime
     # データを設定
     data modify storage player_input:zz commands set from storage player_input: in.commands

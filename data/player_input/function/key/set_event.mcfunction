@@ -25,6 +25,7 @@
 #           command:<string>, -> コマンド入力が成功したときに実行されるコマンド
 #           exclude_key:<list>, -> 判定しないキー このキーをおしてもコマンド判定は中断されない
 #           exclude_hold:<boolen>, -> ホールドを判定するかしないか
+#           cancel_command:<boolen>, -> (false) コマンド成功時に他のコマンドの判定を中断するかどうか
 #           list:[
 #             {
 #               key:<string>, -> キーの名前
