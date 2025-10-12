@@ -6,4 +6,4 @@
 ## 進捗を解除
     advancement revoke @s from zz.player_input:key_input
     # スコアリセット
-    scoreboard players reset @s pliS.logout
+    scoreboard players reset @s pinS.logout

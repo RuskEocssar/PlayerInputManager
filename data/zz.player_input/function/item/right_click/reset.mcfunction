@@ -9,4 +9,4 @@
     execute if data storage player_input: item.components."minecraft:custom_data"{slot:"offhand"} run item replace entity @p[tag=_player] weapon.offhand from entity @s container.0
     execute on origin run tag @s remove _player
     # タグ消去
-    tag @s remove pliT.item.reset
+    tag @s remove pinT.item.reset

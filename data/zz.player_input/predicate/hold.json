@@ -2,10 +2,10 @@
     "condition": "value_check",
     "value": {
         "type": "score",
-        "score": "pliS.time",
+        "score": "pinS.time",
         "target": {
             "type": "fixed",
-            "name": "#pliH.time"
+            "name": "#pinH.time"
         }
     },
     "range": {

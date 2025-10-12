@@ -3,10 +3,10 @@
         "condition": "value_check",
         "value": {
             "type": "score",
-            "score": "pliS.time",
+            "score": "pinS.time",
             "target": {
                 "type": "fixed",
-                "name": "#pliH.interval"
+                "name": "#pinH.interval"
             }
         },
         "range": {
@@ -28,10 +28,10 @@
             "condition": "value_check",
             "value": {
                 "type": "score",
-                "score": "pliS.time",
+                "score": "pinS.time",
                 "target": {
                     "type": "fixed",
-                    "name": "#pliH.mode"
+                    "name": "#pinH.mode"
                 }
             },
             "range": {

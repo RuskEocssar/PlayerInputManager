@@ -1,13 +1,13 @@
 {
     "criteria": {
-        "hotbar": {
+        "right_click": {
             "trigger": "inventory_changed",
             "conditions": {
                 "items": [
                     {
                         "predicates": {
                             "custom_data": {
-                                "click_event":{}
+                                "right_click":{}
                             }
                         }
                     }
@@ -17,7 +17,32 @@
                         "hotbar.*": {
                             "predicates": {
                                 "custom_data": {
-                                    "click_event":{}
+                                    "right_click":{}
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "left_click": {
+            "trigger": "inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "predicates": {
+                            "custom_data": {
+                                "left_click":{}
+                            }
+                        }
+                    }
+                ],
+                "player": {
+                    "slots": {
+                        "hotbar.*": {
+                            "predicates": {
+                                "custom_data": {
+                                    "left_click":{}
                                 }
                             }
                         }
@@ -26,6 +51,12 @@
             }
         }
     },
+    "requirements": [
+        [
+            "left_click",
+            "right_click"
+        ]
+    ],
     "rewards": {
         "function": "zz.player_input:item/slot/change_hotbar"
     }

@@ -8,9 +8,9 @@
     data modify storage player_input:zz events set value []
     data modify storage player_input:zz macro.list set value []
     # データの取得
-    scoreboard players operation #pliH.time pliS.time = @s time.left
-    scoreboard players operation #pliH.interval pliS.time = @s pliS.time.left
-    scoreboard players operation #pliH.mode pliS.time = @s mode.left
+    scoreboard players operation #pinH.time pinS.time = @s time.left
+    scoreboard players operation #pinH.interval pinS.time = @s pinS.time.left
+    scoreboard players operation #pinH.mode pinS.time = @s mode.left
     data modify storage player_input:zz key_type set value "left"
     data modify storage player_input:zz settings set from storage player_input: key_input
     data modify storage player_input:zz events append from storage player_input:zz query[].left
@@ -18,9 +18,9 @@
     function zz.player_input:common/main
 
 ## データの反映
-    scoreboard players operation @s time.left = #pliH.time pliS.time
-    scoreboard players operation @s pliS.time.left = #pliH.interval pliS.time
-    scoreboard players operation @s mode.left = #pliH.mode pliS.time
+    scoreboard players operation @s time.left = #pinH.time pinS.time
+    scoreboard players operation @s pinS.time.left = #pinH.interval pinS.time
+    scoreboard players operation @s mode.left = #pinH.mode pinS.time
 
 ## 終了処理
     return 1

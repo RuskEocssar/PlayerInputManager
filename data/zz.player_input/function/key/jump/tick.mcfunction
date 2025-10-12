@@ -11,11 +11,11 @@
     data modify storage player_input:zz events append from storage player_input:zz query[].jump
 
 ## プレイヤーから実行
-    scoreboard players set #pliH.player pliS. 0
+    scoreboard players set #pinH.player pinS. 0
     execute on origin run function zz.player_input:key/jump/tick_player
 
 ## スコア設定
-    scoreboard players add @s pliS. 1
+    scoreboard players add @s pinS. 1
     
 ## ホールドが終了したら削除
-    execute if score #pliH.player pliS. matches 1 run scoreboard players reset @s pliS.time.jump
+    execute if score #pinH.player pinS. matches 1 run scoreboard players reset @s pinS.time.jump

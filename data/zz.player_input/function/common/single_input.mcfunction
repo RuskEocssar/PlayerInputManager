@@ -11,8 +11,8 @@
 
 ## 個別処理
     # スコア処理
-    scoreboard players set #pliH.input pliS. 1
-    scoreboard players set #pliH.mode.temp pliS.time 0
+    scoreboard players set #pinH.input pinS. 1
+    scoreboard players set #pinH.mode.temp pinS.time 0
     # イベント実行
     data modify storage player_input:zz macro.list append from storage player_input:zz events[].every_input
     data modify storage player_input:zz macro.list append from storage player_input:zz events[].single_input

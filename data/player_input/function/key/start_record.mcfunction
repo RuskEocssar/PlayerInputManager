@@ -4,7 +4,7 @@
 # @input
 
 ## 常時実行を開始
-    scoreboard players set #pliH.key pliS. 1
+    scoreboard players set #pinH.key pinS. 1
     schedule function zz.player_input:key/tick 1t replace
     advancement revoke @s only zz.player_input:key_input
 

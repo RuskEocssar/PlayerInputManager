@@ -117,7 +117,7 @@ player_input: in{
 * <>内はデータ型 ()内は初期値
 
 "minecraft:custom_data" : {
-    click_event : {
+    right_click : {
         single_input : <string>,    | ("") シングルタップのときに実行するコマンド。
         double_input : <string>,    | ("") ダブルタップのときに実行するコマンド。設定されていない場合は、clickに設定したコマンドが実行される。
         hold : <string>,            | ("") 長押し中に実行するコマンド。長押し中はclick、double_clickは実行されない。
@@ -234,7 +234,7 @@ player_input: in{
 　このデータパックで使用されるスコアボードのうち、ユーザ向けに用意しているものは次の通りです。
 | スコアボード      | 名前               | 説明                                                                                                                                             |
 | ----------------- | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `time.click_item` | の保持時間 | アイテムにおいて、ホールドしている場合は最初のタップから何tick経過したか、ダブルタップの場合は一回目のタップから何tick後かを意味する。 |
+| `time.right_click` | の保持時間 | アイテムにおいて、ホールドしている場合は最初のタップから何tick経過したか、ダブルタップの場合は一回目のタップから何tick後かを意味する。 |
 | `time.forward`    | 前進の保持時間     | 前進において、ホールドしている場合は最初のタップから何tick経過したか、ダブルタップの場合は一回目のタップから何tick後かを意味する。             |
 | `time.backward`   | 後退の保持時間     | 後退において、ホールドしている場合は最初のタップから何tick経過したか、ダブルタップの場合は一回目のタップから何tick後かを意味する。             |
 | `time.right`      | 右移動の保持時間   | 右移動において、ホールドしている場合は最初のタップから何tick経過したか、ダブルタップの場合は一回目のタップから何tick後かを意味する。           |
@@ -242,7 +242,7 @@ player_input: in{
 | `time.jump`       | ジャンプの保持時間 | ジャンプにおいて、ホールドしている場合は最初のタップから何tick経過したか、ダブルタップの場合は一回目のタップから何tick後かを意味する。         |
 | `time.sneak`      | スニークの保持時間 | スニークにおいて、ホールドしている場合は最初のタップから何tick経過したか、ダブルタップの場合は一回目のタップから何tick後かを意味する。         |
 | `time.sprint`     | ダッシュの保持時間 | ダッシュにおいて、ホールドしている場合は最初のタップから何tick経過したか、ダブルタップの場合は一回目のタップから何tick後かを意味する。         |
-| `mode.click_item` | の保持時間 | アイテムにおいて、最後に行ったアクションの状態を記録する。0:シングルタップ、 1:ダブルタップ、 2:ホールド開始、 3:ホールド終了            |
+| `mode.right_click` | の保持時間 | アイテムにおいて、最後に行ったアクションの状態を記録する。0:シングルタップ、 1:ダブルタップ、 2:ホールド開始、 3:ホールド終了            |
 | `mode.forward`    | 前進の状態         | 前進において、最後に行ったアクションの状態を記録する。0:シングルタップ、 1:ダブルタップ、 2:ホールド開始、 3:ホールド終了                        |
 | `mode.backward`   | 後退の状態         | 後退において、最後に行ったアクションの状態を記録する。0:シングルタップ、 1:ダブルタップ、 2:ホールド開始、 3:ホールド終了                        |
 | `mode.right`      | 右移動の状態       | 右移動において、最後に行ったアクションの状態を記録する。0:シングルタップ、 1:ダブルタップ、 2:ホールド開始、 3:ホールド終了                      |
@@ -263,13 +263,13 @@ data modify storage player_input: in set value {name:"debug2",everyone:true,forw
 function key/set_event
 
 # アイテム
-give @s recovery_compass[custom_data={click_event:{click:"say click", double_click:"say double click", hold_init:"say hold init", hold_end:"say hold end"}}]
+give @s recovery_compass[custom_data={right_click:{click:"say click", double_click:"say double click", hold_init:"say hold init", hold_end:"say hold end"}}]
 
 # アイテム 4tick毎判定
-give @s recovery_compass[custom_data={click_event:{4t_hold:true, click:"say click"}}]
+give @s recovery_compass[custom_data={right_click:{4t_hold:true, click:"say click"}}]
 
 # アイテム クールダウン付き
-give @s recovery_compass[custom_data={click_event:{click:"say click"}},use_cooldown={seconds:3f,cooldown_group:"a"}]
+give @s recovery_compass[custom_data={right_click:{click:"say click"}},use_cooldown={seconds:3f,cooldown_group:"a"}]
 
 # ストレージからの設定変更
 data modify storage player_input: input_interval set value 4

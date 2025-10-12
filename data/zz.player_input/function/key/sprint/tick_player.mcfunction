@@ -5,13 +5,13 @@
 
 ## 常時実行
     # スコアの取得
-    scoreboard players operation #pliH.time pliS.time = @s time.sprint
-    scoreboard players operation #pliH.interval pliS.time = @s pliS.time.sprint
-    scoreboard players operation #pliH.mode pliS.time = @s mode.sprint
+    scoreboard players operation #pinH.time pinS.time = @s time.sprint
+    scoreboard players operation #pinH.interval pinS.time = @s pinS.time.sprint
+    scoreboard players operation #pinH.mode pinS.time = @s mode.sprint
     # 共通処理
     function zz.player_input:common/tick
 
 ## スコアの反映
-    scoreboard players operation @s time.sprint = #pliH.time pliS.time
-    scoreboard players operation @s pliS.time.sprint = #pliH.interval pliS.time
-    scoreboard players operation @s mode.sprint = #pliH.mode pliS.time
+    scoreboard players operation @s time.sprint = #pinH.time pinS.time
+    scoreboard players operation @s pinS.time.sprint = #pinH.interval pinS.time
+    scoreboard players operation @s mode.sprint = #pinH.mode pinS.time

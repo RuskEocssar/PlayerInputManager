@@ -9,7 +9,7 @@
                     },
                     "predicates": {
                         "custom_data": {
-                            "click_event": {},
+                            "right_click": {},
                             "_slot":"mainhand"
                         }
                     }
@@ -25,7 +25,7 @@
                     },
                     "predicates": {
                         "custom_data": {
-                            "click_event": {},
+                            "right_click": {},
                             "_slot":"offhand"
                         }
                     }
@@ -41,7 +41,7 @@
                     },
                     "predicates": {
                         "custom_data": {
-                            "click_event": {},
+                            "right_click": {},
                             "_slot":"mainhand"
                         }
                     }
@@ -57,7 +57,7 @@
                     },
                     "predicates": {
                         "custom_data": {
-                            "click_event": {},
+                            "right_click": {},
                             "_slot":"offhand"
                         }
                     }

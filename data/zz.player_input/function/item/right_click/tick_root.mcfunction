@@ -11,15 +11,15 @@
     # アイテムデータの取得
     item replace entity 4fe002bb-0-6-0-a00000001 container.0 from entity @s container.0
     data modify storage player_input: item set from entity 4fe002bb-0-6-0-a00000001 Item
-    data modify storage player_input:zz settings merge from storage player_input: item.components."minecraft:custom_data".click_event
-    data modify storage player_input:zz events append from storage player_input: item.components."minecraft:custom_data".click_event
+    data modify storage player_input:zz settings merge from storage player_input: item.components."minecraft:custom_data".right_click
+    data modify storage player_input:zz events append from storage player_input: item.components."minecraft:custom_data".right_click
 
 ## アイテムの再設定が必要な場合
-    execute if entity @s[tag=pliT.item.reset] run function zz.player_input:item/right_click/reset
+    execute if entity @s[tag=pinT.item.reset] run function zz.player_input:item/right_click/reset
 
 ## プレイヤーから実行
-    scoreboard players set #pliH.player pliS. 0
+    scoreboard players set #pinH.player pinS. 0
     execute on origin run function zz.player_input:item/right_click/tick_player
     
 ## ホールドが終了したら削除
-    execute if score #pliH.player pliS. matches 1 run scoreboard players reset @s pliS.time.click_item
+    execute if score #pinH.player pinS. matches 1 run scoreboard players reset @s pinS.time.right_click
