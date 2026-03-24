@@ -120,8 +120,9 @@ player_input: in{
 "minecraft:custom_data" : {
     right_click : {
         single_input : <string>,    | ("") シングルタップのときに実行するコマンド。
-        double_input : <string>,    | ("") ダブルタップのときに実行するコマンド。設定されていない場合は、clickに設定したコマンドが実行される。
-        hold : <string>,            | ("") 長押し中に実行するコマンド。長押し中はclick、double_clickは実行されない。
+        double_input : <string>,    | ("") ダブルタップのときに実行するコマンド。
+        every_input : <string>,     | ("") シングルまたはダブルタップのときに実行するコマンド。
+        hold : <string>,            | ("") 長押し中に実行するコマンド。長押し中はsingle_input、double_inputは実行されない。
         hold_init : <string>,       | ("") 長押しを開始したときに実行するコマンド。
         hold_end : <string>,        | ("") 長押しを終了したときに実行するコマンド。
         
@@ -150,8 +151,9 @@ player_input: in{
 "minecraft:custom_data" : {
     left_click : {
         single_input : <string>,    | ("") シングルタップのときに実行するコマンド。
-        double_input : <string>,    | ("") ダブルタップのときに実行するコマンド。設定されていない場合は、clickに設定したコマンドが実行される。
-        hold : <string>,            | ("") 長押し中に実行するコマンド。長押し中はclick、double_clickは実行されない。
+        double_input : <string>,    | ("") ダブルタップのときに実行するコマンド。
+        every_input : <string>,     | ("") シングルまたはダブルタップのときに実行するコマンド。
+        hold : <string>,            | ("") 長押し中に実行するコマンド。長押し中はsingle_input、double_inputは実行されない。
         hold_init : <string>,       | ("") 長押しを開始したときに実行するコマンド。
         hold_end : <string>,        | ("") 長押しを終了したときに実行するコマンド。
         
