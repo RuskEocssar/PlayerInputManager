@@ -48,60 +48,10 @@
                     }
                 ]
             }
-        },
-        "left_click": {
-            "trigger": "inventory_changed",
-            "conditions": {
-                "items": [
-                    {
-                        "predicates": {
-                            "custom_data": {
-                                "left_click": {}
-                            }
-                        }
-                    }
-                ],
-                "player": [
-                    {
-                        "condition": "entity_properties",
-                        "entity": "this",
-                        "predicate": {
-                            "slots": {
-                                "weapon.offhand": {
-                                    "predicates": {
-                                        "custom_data": {
-                                            "left_click": {}
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    {
-                        "condition": "inverted",
-                        "term": {
-                            "condition": "entity_properties",
-                            "entity": "this",
-                            "predicate": {
-                                "slots": {
-                                    "weapon.offhand": {
-                                        "predicates": {
-                                            "custom_data": {
-                                                "_slot": "offhand"
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                ]
-            }
         }
     },
     "requirements": [
         [
-            "left_click",
             "right_click"
         ]
     ],

@@ -24,36 +24,10 @@
                     }
                 }
             }
-        },
-        "left_click": {
-            "trigger": "inventory_changed",
-            "conditions": {
-                "items": [
-                    {
-                        "predicates": {
-                            "custom_data": {
-                                "left_click":{}
-                            }
-                        }
-                    }
-                ],
-                "player": {
-                    "slots": {
-                        "hotbar.*": {
-                            "predicates": {
-                                "custom_data": {
-                                    "left_click":{}
-                                }
-                            }
-                        }
-                    }
-                }
-            }
         }
     },
     "requirements": [
         [
-            "left_click",
             "right_click"
         ]
     ],

@@ -8,7 +8,6 @@
     #> Puclic
     # @public
         # 入力の保持時間
-            scoreboard objectives add time.left_click dummy "左クリックの保持時間"
             scoreboard objectives add time.right_click dummy "右クリックの保持時間"
             scoreboard objectives add time.forward dummy "前進の保持時間"
             scoreboard objectives add time.backward dummy "後退の保持時間"
@@ -18,7 +17,6 @@
             scoreboard objectives add time.sneak dummy "スニークの保持時間"
             scoreboard objectives add time.sprint dummy "ダッシュの保持時間"
         # 入力の状態 0->デフォルト, 1->ダブルタップ後, 2->ホールド中
-            scoreboard objectives add mode.left_click dummy "左クリックの状態"
             scoreboard objectives add mode.right_click dummy "右クリックの状態"
             scoreboard objectives add mode.forward dummy "前進の状態"
             scoreboard objectives add mode.backward dummy "後退の状態"
@@ -35,7 +33,6 @@
         scoreboard objectives add pinS.time dummy "時間共通"
         scoreboard objectives add pinS.time.2 dummy "時間共通"
         # 内部判定用の時間
-            scoreboard objectives add pinS.time.left_click dummy "左クリックの間隔"
             scoreboard objectives add pinS.time.right_click dummy "右クリックの間隔"
             scoreboard objectives add pinS.time.forward dummy "前進の間隔"
             scoreboard objectives add pinS.time.backward dummy "後退の間隔"
