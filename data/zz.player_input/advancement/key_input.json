@@ -3,28 +3,26 @@
         "input_forward": {
             "trigger": "tick",
             "conditions": {
-                "player": [
-                    {
-                        "condition": "inverted",
-                        "term": {
-                            "condition": "entity_properties",
-                            "entity": "this",
-                            "predicate": {
-                                "type_specific/player": {
-                                    "input": {
-                                        "forward": false,
-                                        "backward": false,
-                                        "right": false,
-                                        "left": false,
-                                        "jump": false,
-                                        "sneak": false,
-                                        "sprint": false
-                                    }
+                "player": {
+                    "type": "inverted",
+                    "term": {
+                        "type": "entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type_specific/player": {
+                                "input": {
+                                    "forward": false,
+                                    "backward": false,
+                                    "right": false,
+                                    "left": false,
+                                    "jump": false,
+                                    "sneak": false,
+                                    "sprint": false
                                 }
                             }
                         }
                     }
-                ]
+                }
             }
         }
     },

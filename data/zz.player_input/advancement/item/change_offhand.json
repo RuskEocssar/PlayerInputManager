@@ -12,41 +12,44 @@
                         }
                     }
                 ],
-                "player": [
-                    {
-                        "condition": "entity_properties",
-                        "entity": "this",
-                        "predicate": {
-                            "slots": {
-                                "weapon.offhand": {
-                                    "predicates": {
-                                        "custom_data": {
-                                            "right_click": {}
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    {
-                        "condition": "inverted",
-                        "term": {
-                            "condition": "entity_properties",
+                "player": {
+                    "type": "all_of",
+                    "terms": [
+                        {
+                            "type": "entity_properties",
                             "entity": "this",
                             "predicate": {
                                 "slots": {
                                     "weapon.offhand": {
                                         "predicates": {
                                             "custom_data": {
-                                                "_slot": "offhand"
+                                                "right_click": {}
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "type": "inverted",
+                            "term": {
+                                "type": "entity_properties",
+                                "entity": "this",
+                                "predicate": {
+                                    "slots": {
+                                        "weapon.offhand": {
+                                            "predicates": {
+                                                "custom_data": {
+                                                    "_slot": "offhand"
+                                                }
                                             }
                                         }
                                     }
                                 }
                             }
                         }
-                    }
-                ]
+                    ]
+                }
             }
         },
         "left_click": {
@@ -61,41 +64,44 @@
                         }
                     }
                 ],
-                "player": [
-                    {
-                        "condition": "entity_properties",
-                        "entity": "this",
-                        "predicate": {
-                            "slots": {
-                                "weapon.offhand": {
-                                    "predicates": {
-                                        "custom_data": {
-                                            "left_click": {}
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    {
-                        "condition": "inverted",
-                        "term": {
-                            "condition": "entity_properties",
+                "player": {
+                    "type": "all_of",
+                    "terms": [
+                        {
+                            "type": "entity_properties",
                             "entity": "this",
                             "predicate": {
                                 "slots": {
                                     "weapon.offhand": {
                                         "predicates": {
                                             "custom_data": {
-                                                "_slot": "offhand"
+                                                "left_click": {}
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "type": "inverted",
+                            "term": {
+                                "type": "entity_properties",
+                                "entity": "this",
+                                "predicate": {
+                                    "slots": {
+                                        "weapon.offhand": {
+                                            "predicates": {
+                                                "custom_data": {
+                                                    "_slot": "offhand"
+                                                }
                                             }
                                         }
                                     }
                                 }
                             }
                         }
-                    }
-                ]
+                    ]
+                }
             }
         }
     },

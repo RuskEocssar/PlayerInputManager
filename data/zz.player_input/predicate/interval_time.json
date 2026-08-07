@@ -1,8 +1,8 @@
 {
-    "condition": "any_of",
+    "type": "any_of",
     "terms": [
         {
-            "condition": "value_check",
+            "type": "value_check",
             "value": {
                 "type": "score",
                 "score": "pinS.time",
@@ -21,7 +21,7 @@
             }
         },
         {
-            "condition": "value_check",
+            "type": "value_check",
             "value": {
                 "type": "score",
                 "score": "pinS.time",

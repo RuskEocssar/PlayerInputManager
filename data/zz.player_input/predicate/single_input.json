@@ -1,8 +1,8 @@
 {
-    "condition": "all_of",
+    "type": "all_of",
     "terms": [
         {
-            "condition": "value_check",
+            "type": "value_check",
             "value": {
                 "type": "score",
                 "score": "pinS.time",
@@ -20,12 +20,6 @@
                 "max": 2147483647
             }
         },
-        {
-            "condition": "inverted",
-            "term": {
-                "condition": "reference",
-                "name": "zz.player_input:double_input"
-            }
-        }
+        "zz.player_input:double_input"
     ]
 }

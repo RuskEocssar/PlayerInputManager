@@ -1,5 +1,5 @@
 {
-    "condition": "value_check",
+    "type": "value_check",
     "value": {
         "type": "score",
         "score": "pinS.time",
