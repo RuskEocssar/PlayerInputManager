@@ -20,6 +20,9 @@
                 "max": 2147483647
             }
         },
-        "zz.player_input:double_input"
+        {
+            "type": "inverted",
+            "term": "zz.player_input:double_input"
+        }
     ]
 }
