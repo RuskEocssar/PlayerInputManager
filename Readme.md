@@ -2,7 +2,7 @@
 
 プレイヤーの前後左右移動やジャンプ、スニーク、右クリックや攻撃などの入力において、シングルタップ、ダブルタップ、長押しなどに応じたコマンドの実行を簡単に設定できるようにするためのデータパックです。
 
-対応バージョン：1.21.5
+対応バージョン：26.4
 
 <img src="/doc/player_input.gif" alt="player input gif" width="500">
 <img src="/doc/click_item.gif" alt="click item gif" width="500">
