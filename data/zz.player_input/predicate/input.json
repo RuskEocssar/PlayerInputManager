@@ -1,5 +1,5 @@
 {
-    "type": "value_check",
+    "type": "int_value_check",
     "value": {
         "type": "score",
         "score": "pinS.time",
@@ -8,7 +8,7 @@
             "name": "#pinH.interval"
         }
     },
-    "range": {
+    "test": {
         "min": {
             "type": "storage",
             "path": "settings.input_interval",

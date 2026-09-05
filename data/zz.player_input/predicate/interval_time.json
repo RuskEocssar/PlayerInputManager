@@ -2,7 +2,7 @@
     "type": "any_of",
     "terms": [
         {
-            "type": "value_check",
+            "type": "int_value_check",
             "value": {
                 "type": "score",
                 "score": "pinS.time",
@@ -11,7 +11,7 @@
                     "name": "#pinH.interval"
                 }
             },
-            "range": {
+            "test": {
                 "min": 0,
                 "max": {
                     "type": "storage",
@@ -21,7 +21,7 @@
             }
         },
         {
-            "type": "value_check",
+            "type": "int_value_check",
             "value": {
                 "type": "score",
                 "score": "pinS.time",
@@ -30,7 +30,7 @@
                     "name": "#pinH.interval"
                 }
             },
-            "range": {
+            "test": {
                 "min": 0,
                 "max": {
                     "type": "storage",
